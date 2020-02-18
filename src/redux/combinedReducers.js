@@ -1,7 +1,12 @@
 import {combineReducers} from "redux";
-import charactersReducer from "./ducks/characters";
+import dataReducer from "./ducks/data";
+
+const logger = (state = "", action) => {
+  console.log(action);
+  return state;
+};
 
 export default combineReducers({
-  characters: charactersReducer
-  // starships: StarshipsReducer,
+  data: dataReducer,
+  logger
 });
