@@ -1,52 +1,41 @@
 import React from "react";
+import {useHistory} from "react-router-dom";
 import * as S from "../../styles/styled";
 
 export default function Categories() {
-  let actual = 0;
-  let anchor;
+  const history = useHistory();
 
-  window.onload = () => {
-    anchor = document.querySelectorAll("a");
-    document.addEventListener("keyup", listenKeyPress);
-    anchor[0].focus();
+  const goto = (url) => {
+    history.push(url);
   };
-
-  function listenKeyPress(e) {
-    if ((e.keyCode === 38) & (actual > 0)) {
-      actual -= 1;
-      anchor[actual].focus();
-    }
-    if ((e.keyCode === 40) & (actual < anchor.length - 1)) {
-      actual += 1;
-      anchor[actual].focus();
-    }
-  }
 
   return (
     <S.Window>
       <S.List>
         <S.Item>
-          <S.Button autoFocus to="/categories/characters">
+          <S.Button autoFocus onClick={() => goto("/categories/characters")}>
             Characters
           </S.Button>
         </S.Item>
         <S.Item>
-          <S.Button to="/categories/planets">Planets</S.Button>
+          <S.Button onClick={() => goto("/categories/planets")}>Planets</S.Button>
         </S.Item>
         <S.Item>
-          <S.Button to="/categories/starships">Starships</S.Button>
+          <S.Button onClick={() => goto("/categories/starships")}>Starships</S.Button>
         </S.Item>
         <S.Item>
-          <S.Button to="/categories/vehicles">Vehicles</S.Button>
+          <S.Button onClick={() => goto("/categories/vehicles")}>Vehicles</S.Button>
         </S.Item>
         <S.Item>
-          <S.Button to="/categories/films">Films</S.Button>
+          <S.Button onClick={() => goto("/categories/films")}>Films</S.Button>
         </S.Item>
         <S.Item>
-          <S.Button to="/categories/species">Species</S.Button>
+          <S.Button onClick={() => goto("/categories/species")}>Species</S.Button>
         </S.Item>
         <S.Item>
-          <S.Button to="/">Go Back</S.Button>
+          <S.Button off onClick={() => goto("/")}>
+            Go Back
+          </S.Button>
         </S.Item>
       </S.List>
     </S.Window>
