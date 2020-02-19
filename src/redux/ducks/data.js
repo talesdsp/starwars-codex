@@ -1,7 +1,7 @@
 export const dataTypes = {
   SET_DATA: "SET_DATA",
   IS_LOADING: "IS_LOADING",
-  ASYNC_GET_DATA: "ASYNC_GET_CHARACTERS"
+  ASYNC_GET_DATA: "ASYNC_GET_DATA"
 };
 
 const get = (urlPath) => ({
