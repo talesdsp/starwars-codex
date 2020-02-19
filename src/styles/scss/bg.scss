@@ -1,0 +1,53 @@
+@function addStar($star: "") {
+  @for $i from 1 through 300 {
+    $star: $star + random(1000)*0.1vw + " "+ random(1000)*0.1vh + " "+ 0 + " "+ random(50)*-0.01rem + #cc7;
+
+    @if $i < 300 {
+      $star: $star + ",";
+    }
+  }
+
+  @return $star;
+}
+
+.layer1 {
+  width             : .45rem;
+  height            : .45rem;
+  opacity           : 1;
+  box-shadow        : #{addStar()};
+  animation-duration: 60s;
+}
+
+.layer1.a {
+  animation-delay: -30s;
+}
+
+.layer2 {
+  width             : .4rem;
+  height            : .4rem;
+  opacity           : .5;
+  box-shadow        : #{addStar()};
+  animation-duration: 80s;
+}
+
+.layer2.a {
+  animation-delay: -40s;
+}
+
+.layer3 {
+  width             : 0.3rem;
+  height            : 0.3rem;
+  opacity           : .3;
+  box-shadow        : #{addStar()};
+  animation-duration: 100s;
+}
+
+.layer3.a {
+  animation-delay: -50s;
+}
+
+@keyframes fall {
+  100% {
+    transform: translateY(200vh);
+  }
+}
