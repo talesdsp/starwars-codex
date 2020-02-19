@@ -12,11 +12,11 @@ export default function Categories() {
   };
 
   function listenKeyPress(e) {
-    if (e.keyCode === 38 && actual > 0) {
+    if ((e.keyCode === 38) & (actual > 0)) {
       actual -= 1;
       anchor[actual].focus();
     }
-    if (e.keyCode === 40 && actual < anchor.length - 1) {
+    if ((e.keyCode === 40) & (actual < anchor.length - 1)) {
       actual += 1;
       anchor[actual].focus();
     }
