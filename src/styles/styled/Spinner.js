@@ -11,7 +11,7 @@ const rotate360 = keyframes`
 `;
 
 const Spinner = styled.div`
-  animation: ${rotate360} 2s linear infinite;
+  animation: ${rotate360} 1s linear infinite;
   transform: translateZ(0);
   position: absolute;
   top: 0;
@@ -23,7 +23,7 @@ const Spinner = styled.div`
   border-top: 2px solid grey;
   border-right: 2px solid grey;
   border-bottom: 2px solid grey;
-  border-left: 4px solid blue;
+  border-left: 4px solid #ffe81f;
   background: transparent;
   width: 24px;
   height: 24px;
