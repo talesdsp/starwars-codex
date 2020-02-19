@@ -1,11 +1,12 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import logo from "../../logo.svg";
+import * as S from "../../styles/styled";
 
 export default function Home() {
   return (
-    <div>
-      <h1>Star Wars</h1>
-      <Link to="/characters">click me</Link>
-    </div>
+    <S.Window>
+      <img src={logo} alt="Star Wars" />
+      <S.Button to="/categories">Start</S.Button>
+    </S.Window>
   );
 }
