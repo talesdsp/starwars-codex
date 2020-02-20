@@ -1,5 +1,7 @@
 import React from "react";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
+import mp3 from "./audio/starwars.mp3";
+import ogg from "./audio/starwars.ogg";
 import Categories from "./Routes/Categories";
 import Home from "./Routes/Home";
 import Subject from "./Routes/Subject";
@@ -55,6 +57,11 @@ function App() {
 
   return (
     <BrowserRouter>
+      <audio autoPlay loop id="audio">
+        <source id="ogg" src={ogg} type="audio/ogg" />
+        <source id="mp3" src={mp3} type="audio/mpeg" />
+        Your browser does not support the audio tag.
+      </audio>
       <Stars />
       <Switch>
         <Route
