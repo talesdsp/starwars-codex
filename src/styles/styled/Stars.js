@@ -19,7 +19,6 @@ const Star = styled.div`
   position: fixed;
   top: -100vh;
   border-radius: 50%;
-  background-image: transparent;
   animation-name: fall;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
