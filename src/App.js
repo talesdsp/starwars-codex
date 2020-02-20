@@ -1,5 +1,7 @@
 import React from "react";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
+import lightsaberMP3 from "./audio/sfx/lightsaber.mp3";
+import lightsaberOGG from "./audio/sfx/lightsaber.ogg";
 import mp3 from "./audio/starwars.mp3";
 import ogg from "./audio/starwars.ogg";
 import Categories from "./Routes/Categories";
@@ -55,6 +57,12 @@ function App() {
     }
   }
 
+  function start() {
+    const audio = document.querySelector("#start");
+    audio.load();
+    audio.play();
+  }
+
   return (
     <BrowserRouter>
       <audio autoPlay loop id="audio">
@@ -62,12 +70,19 @@ function App() {
         <source id="mp3" src={mp3} type="audio/mpeg" />
         Your browser does not support the audio tag.
       </audio>
+
+      <audio id="start">
+        <source id="ogg" src={lightsaberOGG} type="audio/ogg" />
+        <source id="mp3" src={lightsaberMP3} type="audio/mpeg" />
+        Your browser does not support the audio tag.
+      </audio>
+
       <Stars />
       <Switch>
         <Route
           exact
           path="/"
-          render={(props) => <Home {...props} fn={prepareNavigation(isLoaded)} />}
+          render={(props) => <Home {...props} start={start} fn={prepareNavigation(isLoaded)} />}
         />
         <Route
           exact
