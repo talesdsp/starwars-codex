@@ -7,13 +7,16 @@ import ogg from "./audio/starwars.ogg";
 import Categories from "./Routes/Categories";
 import Home from "./Routes/Home";
 import Subject from "./Routes/Subject";
+import "./styles/css/index.css";
 import Stars from "./styles/styled/Stars";
+import lightning from "./video/lightning.mp4";
 
 function App() {
   let isLoaded = false;
   window.onload = () => {
     isLoaded = true;
   };
+
   function prepareNavigation(isLoaded) {
     let actual;
     let btn;
@@ -26,10 +29,7 @@ function App() {
       btn = [];
       actual = 0;
       btn = document.querySelectorAll("button");
-      console.log(btn);
-
       if (btn.length === 0) return prepareNavigation(isLoaded);
-
       document.addEventListener("keyup", applyFocus);
       btn.forEach((a) => a.addEventListener("pointerenter", applyFocus));
       btn.forEach((a) => a.addEventListener("pointerleave", applyFocus));
@@ -38,7 +38,6 @@ function App() {
     }
 
     function applyFocus(e = {}) {
-      console.log(e);
       if ((e.keyCode === 38) & (actual > 0)) {
         actual -= 1;
         btn[actual].focus();
@@ -61,6 +60,12 @@ function App() {
     const audio = document.querySelector("#start");
     audio.load();
     audio.play();
+
+    const video = document.querySelector("#video");
+    video.classList.add("play");
+    video.load();
+    video.play();
+    video.addEventListener("ended", () => video.classList.remove("play"));
   }
 
   return (
@@ -68,16 +73,19 @@ function App() {
       <audio autoPlay loop id="audio">
         <source id="ogg" src={ogg} type="audio/ogg" />
         <source id="mp3" src={mp3} type="audio/mpeg" />
-        Your browser does not support the audio tag.
       </audio>
 
       <audio id="start">
         <source id="ogg" src={lightsaberOGG} type="audio/ogg" />
         <source id="mp3" src={lightsaberMP3} type="audio/mpeg" />
-        Your browser does not support the audio tag.
       </audio>
 
+      <video id="video">
+        <source src={lightning} type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+      </video>
+
       <Stars />
+
       <Switch>
         <Route
           exact
