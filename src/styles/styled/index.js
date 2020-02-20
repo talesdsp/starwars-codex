@@ -1,4 +1,4 @@
-import styled, {css, keyframes} from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 export const Window = styled.main`
   position: relative;
@@ -20,6 +20,7 @@ export const StarLogo = styled.img`
 export const Role = styled.h1`
   font-size: 3rem;
   color: #fff;
+  text-transform: uppercase;
   width: 100%;
   text-align: center;
   background-color: #03121a;
@@ -28,16 +29,14 @@ export const Role = styled.h1`
 
 export const List = styled.ul`
   display: flex;
-  margin: auto;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: max-content;
   width: 100%;
   background-color: transparent;
 
   @media (min-width: 768px) {
-    width: 40%;
+    width: 60%;
   }
 `;
 
@@ -45,9 +44,10 @@ export const Item = styled.li`
   color: #fff;
   text-decoration: none;
   width: 100%;
-  display: flex;
-  margin: 0.5rem 0;
+  justify-content: center;
   align-items: center;
+  display: flex;
+  margin: 0.2rem 0;
   flex-direction: column;
   p {
     font-size: 1.6rem;
@@ -118,9 +118,40 @@ to{
   };
 `;
 
-export const Card = styled.div`
+export const X = styled.div`
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
   display: flex;
-  animation: ${fadeIn} 1s ease;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  &::after {
+    content: "";
+    position: absolute;
+    background: #fff;
+    width: 2rem;
+    transform: rotate(45deg);
+    height: 0.3rem;
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    background: #fff;
+    width: 2rem;
+    transform: rotate(-45deg);
+    height: 0.3rem;
+  }
+
+  @media (min-width: 768px) {
+    display: none;
+    &::after,
+    &::before {
+      display: none;
+    }
+  }
 `;
 
 export const Modal = styled.div`
@@ -130,15 +161,15 @@ export const Modal = styled.div`
   height: 50%;
   top: 0;
   left: 0;
+  opacity: 0.8;
   background-color: #000;
+  padding: 2rem;
   right: 0;
   z-index: 4;
   bottom: 0;
   margin: auto;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  animation: ${fadeIn} 1s ease;
+  animation: ${fadeIn} .5s ease;
 
   p {
     margin: 1rem 0;
@@ -150,21 +181,23 @@ export const Modal = styled.div`
 
   @media (min-width: 768px) {
     position: absolute;
-    width: 16rem;
+    background-color: transparent;
+    width: 40%;
+    opacity: 1;
     height: unset;
     left: unset;
     bottom: unset;
-    right: 10%;
+    right: 0;
     top: 12rem;
   }
 `;
 
 export const Controls = styled.footer`
   display: flex;
-  margin: auto;
   position: relative;
 
   @media (min-width: 768px) {
+    margin-left: 10vw;
     max-width: 40%;
   }
 `;
