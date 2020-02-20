@@ -1,4 +1,40 @@
-import styled, { css, keyframes } from "styled-components";
+import styled, {css, keyframes} from "styled-components";
+
+const shake = keyframes`
+    0% {
+      transform: translate(.1rem, .1rem) rotate(0deg);
+    }
+    10% {
+      transform: translate(-.1rem, -.2rem) rotate(-1deg);
+    }
+    20% {
+      transform: translate(-.3rem, 0rem) rotate(1deg);
+    }
+    30% {
+      transform: translate(.3rem, .2rem) rotate(0deg);
+    }
+    40% {
+      transform: translate(.1rem, -.1rem) rotate(1deg);
+    }
+    50% {
+      transform: translate(-.1rem, .2rem) rotate(-1deg);
+    }
+    60% {
+      transform: translate(-.3rem, .1rem) rotate(0deg);
+    }
+    70% {
+      transform: translate(.3rem, .1rem) rotate(-1deg);
+    }
+    80% {
+      transform: translate(-.1rem, -.1rem) rotate(1deg);
+    }
+    90% {
+      transform: translate(.1rem, .2rem) rotate(0deg);
+    }
+    100% {
+      transform: translate(.1rem, -.2rem) rotate(-1deg);
+    }
+`;
 
 export const Window = styled.main`
   position: relative;
@@ -8,6 +44,12 @@ export const Window = styled.main`
   align-items: center;
   justify-content: center;
   height: 100vh;
+
+  ${(props) =>
+    props.shake &&
+    css`
+      animation: ${shake} 1s;
+    `}
 `;
 
 export const StarLogo = styled.img`
@@ -169,7 +211,7 @@ export const Modal = styled.div`
   bottom: 0;
   margin: auto;
   flex-direction: column;
-  animation: ${fadeIn} .5s ease;
+  animation: ${fadeIn} 0.5s ease;
 
   p {
     margin: 1rem 0;
