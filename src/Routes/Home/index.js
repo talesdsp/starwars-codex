@@ -13,8 +13,9 @@ export default function Home({start}) {
     setTimeout(() => {
       setShake(false);
       history.push(url);
-    }, 500);
+    }, 1000);
   };
+
   return (
     <S.Window shake={shake}>
       <S.StarLogo src={logo} alt="Star Wars" />
