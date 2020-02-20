@@ -1,8 +1,8 @@
 import React from "react";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Categories from "./Routes/Categories";
-import Characters from "./Routes/Characters";
 import Home from "./Routes/Home";
+import Subject from "./Routes/Subject";
 import Stars from "./styles/styled/Stars";
 
 function App() {
@@ -22,17 +22,19 @@ function App() {
       btn = [];
       actual = 0;
       btn = document.querySelectorAll("button");
+      console.log(btn);
 
       if (btn.length === 0) return prepareNavigation(isLoaded);
 
       document.addEventListener("keyup", applyFocus);
-      btn.forEach((a) => a.addEventListener("mouseenter", applyFocus));
-      btn.forEach((a) => a.addEventListener("mouseleave", applyFocus));
+      btn.forEach((a) => a.addEventListener("pointerenter", applyFocus));
+      btn.forEach((a) => a.addEventListener("pointerleave", applyFocus));
       btn[0].focus();
       applyFocus();
     }
 
     function applyFocus(e = {}) {
+      console.log(e);
       if ((e.keyCode === 38) & (actual > 0)) {
         actual -= 1;
         btn[actual].focus();
@@ -68,32 +70,40 @@ function App() {
         <Route
           exact
           path="/categories/characters"
-          render={(props) => <Characters {...props} fn={prepareNavigation(isLoaded)} />}
+          render={(props) => <Subject {...props} theme="people" fn={prepareNavigation(isLoaded)} />}
         />
         <Route
           exact
           path="/categories/starships"
-          render={(props) => <Characters {...props} fn={prepareNavigation(isLoaded)} />}
+          render={(props) => (
+            <Subject {...props} theme="starships" fn={prepareNavigation(isLoaded)} />
+          )}
         />
         <Route
           exact
           path="/categories/films"
-          render={(props) => <Characters {...props} fn={prepareNavigation(isLoaded)} />}
+          render={(props) => <Subject {...props} theme="films" fn={prepareNavigation(isLoaded)} />}
         />
         <Route
           exact
           path="/categories/vehicles"
-          render={(props) => <Characters {...props} fn={prepareNavigation(isLoaded)} />}
+          render={(props) => (
+            <Subject {...props} theme="vehicles" fn={prepareNavigation(isLoaded)} />
+          )}
         />
         <Route
           exact
           path="/categories/species"
-          render={(props) => <Characters {...props} fn={prepareNavigation(isLoaded)} />}
+          render={(props) => (
+            <Subject {...props} theme="species" fn={prepareNavigation(isLoaded)} />
+          )}
         />
         <Route
           exact
           path="/categories/planets"
-          render={(props) => <Characters {...props} fn={prepareNavigation(isLoaded)} />}
+          render={(props) => (
+            <Subject {...props} theme="planets" fn={prepareNavigation(isLoaded)} />
+          )}
         />
       </Switch>
     </BrowserRouter>
