@@ -13,9 +13,7 @@ export default function Categories() {
     <S.Window>
       <S.List>
         <S.Item>
-          <S.Button autoFocus onClick={() => goto("/categories/characters")}>
-            Characters
-          </S.Button>
+          <S.Button onClick={() => goto("/categories/characters")}>Characters</S.Button>
         </S.Item>
         <S.Item>
           <S.Button onClick={() => goto("/categories/planets")}>Planets</S.Button>
