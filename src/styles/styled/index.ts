@@ -64,9 +64,12 @@ export const StarLogo = styled.img`
 `;
 
 export const HomeWrapper = styled.div`
-  width: 40%;
+  width: 100%;
   background: blue;
   margin: 0 auto 8rem;
+  @media (min-width: 768px) {
+    width: 40%;
+  }
 `;
 
 export const Role = styled.h1`
