@@ -17,6 +17,9 @@ const App: React.FC = () => {
   React.useEffect(() => {
     window.onload = () => {
       setLoaded(true);
+      const soundTrack: HTMLMediaElement | null = document.querySelector("#audio");
+      soundTrack?.load();
+      soundTrack?.play();
     };
   }, []);
 
