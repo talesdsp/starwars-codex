@@ -1,7 +1,8 @@
 import React from "react";
-import * as S from "../styles/styled/index";
+import * as S from "../styles/styled";
+import { Starship } from "./types";
 
-const Vehicles = ({results, closeModal}) => {
+const Starships: Starship = ({ results, closeModal }) => {
   return (
     <>
       {results.map((v, i) => (
@@ -16,7 +17,7 @@ const Vehicles = ({results, closeModal}) => {
             <p>manufacturer: {v.manufacturer}</p>
             <p>passengers: {v.passengers}</p>
             <p>pilots: {v.pilots}</p>
-            <p>const in credits: {v.cost_in_credits}</p>
+            <p>cost_in_credits: {v.cost_in_credits}</p>
           </S.Modal>
         </S.Item>
       ))}
@@ -24,4 +25,4 @@ const Vehicles = ({results, closeModal}) => {
   );
 };
 
-export default Vehicles;
+export default Starships;

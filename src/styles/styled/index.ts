@@ -1,4 +1,4 @@
-import styled, {css, keyframes} from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 const shake = keyframes`
     0% {
@@ -36,7 +36,11 @@ const shake = keyframes`
     }
 `;
 
-export const Window = styled.main`
+interface IWindowProps {
+  readonly shake?: boolean;
+}
+
+export const Window = styled.main<IWindowProps>`
   position: relative;
   width: 100vw;
   display: flex;
@@ -48,7 +52,7 @@ export const Window = styled.main`
   ${(props) =>
     props.shake &&
     css`
-      animation: ${shake} 1s;
+      animation: ${shake} 1.25s;
     `}
 `;
 
@@ -57,6 +61,12 @@ export const StarLogo = styled.img`
   @media (min-width: 768px) {
     width: 50%;
   }
+`;
+
+export const HomeWrapper = styled.div`
+  width: 40%;
+  background: blue;
+  margin: 0 auto 8rem;
 `;
 
 export const Role = styled.h1`
@@ -96,7 +106,12 @@ export const Item = styled.li`
   }
 `;
 
-export const Button = styled.button`
+interface IButtonProps {
+  readonly number?: boolean;
+  readonly off?: boolean;
+}
+
+export const Button = styled.button<IButtonProps>`
   text-decoration: none;
   text-transform: uppercase;
   color: #fff;

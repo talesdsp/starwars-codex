@@ -1,13 +1,12 @@
-import React, {useState} from "react";
-import {useHistory} from "react-router-dom";
+import React, { useState } from "react";
 import logo from "../../logo.svg";
 import * as S from "../../styles/styled";
+import { HomeProps } from "../types";
 
-export default function Home({start}) {
-  const history = useHistory();
+const Home: React.FC<HomeProps> = ({ start, history }) => {
   const [shake, setShake] = useState(false);
 
-  const goto = (url) => {
+  const goto = (url: string) => {
     start();
     setShake(true);
     setTimeout(() => {
@@ -19,7 +18,11 @@ export default function Home({start}) {
   return (
     <S.Window shake={shake}>
       <S.StarLogo src={logo} alt="Star Wars" />
-      <S.Button onClick={() => goto("/categories")}>Start</S.Button>
+      <S.HomeWrapper>
+        <S.Button onClick={() => goto("/categories")}>Start</S.Button>
+      </S.HomeWrapper>
     </S.Window>
   );
-}
+};
+
+export default Home;

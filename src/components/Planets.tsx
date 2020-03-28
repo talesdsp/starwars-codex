@@ -1,7 +1,8 @@
 import React from "react";
-import * as S from "../styles/styled/index";
+import * as S from "../styles/styled";
+import { Planet } from "./types";
 
-const Planets = ({results, closeModal}) => {
+const Planets: Planet = ({ results, closeModal }) => {
   return (
     <>
       {results.map((v, i) => (

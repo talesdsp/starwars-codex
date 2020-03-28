@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import "../css/bg.css";
 
-const Stars = () => (
+const Stars: React.FC = () => (
   <>
     <Star className="layer1" />
     <Star className="layer1 a" />

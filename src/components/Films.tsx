@@ -1,7 +1,8 @@
 import React from "react";
-import * as S from "../styles/styled/index";
+import * as S from "../styles/styled";
+import { Film } from "./types";
 
-const Films = ({results, closeModal}) => {
+const Films: Film = ({ results, closeModal }) => {
   return (
     <>
       {results.map((v, i) => (

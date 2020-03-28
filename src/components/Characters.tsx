@@ -1,13 +1,14 @@
 import React from "react";
-import * as S from "../styles/styled/index";
+import * as S from "../styles/styled";
+import { Character } from "./types";
 
-const Characters = ({results, closeModal}) => {
+const Characters: Character = ({ results, closeModal }) => {
   return (
     <>
       {results.map((v, i) => (
         <S.Item key={i}>
           <S.Button>
-            <h1>{v.name}</h1>
+            <h1>{v.name}</h1>s
           </S.Button>
           <S.Modal>
             <S.X onClick={closeModal} />
