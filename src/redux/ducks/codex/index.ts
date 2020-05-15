@@ -1,7 +1,7 @@
 import { Reducer } from "redux";
-import { CodexState, CodexTypes } from "./types";
+import { CodexAction, CodexState, CodexTypes } from "./types";
 
-const initialState: CodexState = {
+export const initialState: CodexState = {
   data: {
     count: 0,
     previous: null,
@@ -11,7 +11,7 @@ const initialState: CodexState = {
   isLoading: false,
 };
 
-export const codexReducer: Reducer<CodexState> = (state = initialState, action) => {
+export const codexReducer: Reducer<CodexState, CodexAction> = (state = initialState, action) => {
   switch (action.type) {
     case CodexTypes.SET_DATA:
       return {
