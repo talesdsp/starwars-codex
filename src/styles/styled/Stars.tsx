@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import "../css/bg.css";
+import "../scss/bg.scss";
 
 const Stars: React.FC = () => (
   <>
