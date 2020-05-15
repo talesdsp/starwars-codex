@@ -1,4 +1,4 @@
-const API_URL = "https://swapi.co/api";
+const API_URL = "https://swapi.dev/api";
 
 const swapi = async (path: string, params?: string) => {
   const response = await fetch(`${API_URL}/${path}${params ? `?${params}` : ""}`);
