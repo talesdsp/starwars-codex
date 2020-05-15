@@ -1,10 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import logo from "../../logo.svg";
 import * as S from "../../styles/styled";
-import { HomeProps } from "../types";
+import { initNavigation } from "../../utils/navigation";
 
-const Home: React.FC<HomeProps> = ({ start, history }) => {
+const start = () => {
+  const audio: HTMLMediaElement | null = document.querySelector("#start");
+  audio?.load();
+  audio?.play();
+
+  const video: HTMLMediaElement | null = document.querySelector("#video");
+  video?.classList.add("play");
+  video?.load();
+  video?.play();
+  video?.addEventListener("ended", () => video.classList.remove("play"));
+
+  return { audio, video };
+};
+
+const Home: React.FC = () => {
   const [shake, setShake] = useState(false);
+
+  useEffect(() => {
+    initNavigation();
+  }, []);
+
+  const history = useHistory();
 
   const goto = (url: string) => {
     start();

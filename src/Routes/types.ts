@@ -1,17 +1,11 @@
 import { RouteComponentProps } from "react-router-dom";
 
-export interface NavigationProps {
-  fn: void;
-}
+export type CategoriesProps = RouteComponentProps;
 
-export type CategoriesProps = NavigationProps & RouteComponentProps;
-
-export interface HomeProps extends NavigationProps, RouteComponentProps {
-  start: Function;
-}
+export type HomeProps = RouteComponentProps;
 
 export type SParams = { theme: string };
-export type SubjectProps = RouteComponentProps<SParams> & NavigationProps;
+export type SubjectProps = RouteComponentProps<SParams>;
 
 export interface SelectComponent {
   [key: string]: JSX.Element;

@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import * as S from "../../styles/styled";
-import { CategoriesProps } from "../types";
+import { initNavigation } from "../../utils/navigation";
 
-const Categories: React.FC<CategoriesProps> = ({ history }) => {
+const Categories: React.FC = () => {
   type URL = "people" | "planets" | "starships" | "vehicles" | "films" | "species";
+
+  useEffect(() => {
+    initNavigation();
+  }, []);
+
+  const history = useHistory();
 
   const goto = (url: URL) => {
     history.push(`/categories/${url}`);

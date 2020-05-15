@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useRouteMatch } from "react-router-dom";
 import Buttons from "../../components/Buttons";
 import Characters from "../../components/Characters";
 import Films from "../../components/Films";
@@ -11,9 +12,10 @@ import { ApplicationState } from "../../redux";
 import { getAsyncData, triggerLoading } from "../../redux/ducks/codex/actions";
 import * as S from "../../styles/styled";
 import Spinner from "../../styles/styled/Spinner";
-import { SelectComponent, SubjectProps } from "../types";
+import { initNavigation } from "../../utils";
+import { SelectComponent, SParams } from "../types";
 
-const Subject: React.FC<SubjectProps> = ({ match, history }) => {
+const Subject: React.FC = () => {
   const [
     {
       data: { results, count },
@@ -22,18 +24,18 @@ const Subject: React.FC<SubjectProps> = ({ match, history }) => {
   ] = useSelector((state: ApplicationState) => [state.codex]);
   const dispatch = useDispatch();
 
+  const match = useRouteMatch<SParams>();
+
   const theme = match.params.theme;
 
   useEffect(() => {
+    initNavigation();
     dispatch(triggerLoading());
     dispatch(getAsyncData(theme));
   }, [dispatch, theme]);
 
-  const closeModal: React.MouseEventHandler = () => {
-    const btn = document.querySelectorAll("button");
-    btn.forEach((v) => {
-      (v.nextSibling as HTMLElement).removeAttribute("data-openpreview");
-    });
+  const closeModal: React.MouseEventHandler<Node> = (ev) => {
+    (ev.target as Node).parentElement?.removeAttribute("data-openpreview");
   };
 
   const Which = () => {
