@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Footer from "./components/Footer";
 import Categories from "./Routes/Categories";
 import Home from "./Routes/Home";
 import Subject from "./Routes/Subject";
@@ -41,6 +42,8 @@ const App: React.FC = () => {
         <Route exact path="/categories" component={Categories} />
         <Route exact path="/categories/:theme" component={Subject} />
       </Switch>
+
+      <Footer />
     </BrowserRouter>
   );
 };
