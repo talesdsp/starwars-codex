@@ -1,20 +1,20 @@
-export const setModal = (btn: NodeListOf<HTMLButtonElement>) => {
+export const togglePreviewAttribute = (btn: NodeListOf<HTMLButtonElement>) => {
   if (document.activeElement?.nextSibling) {
     btn.forEach((v) => {
-      (v.nextSibling as HTMLButtonElement)?.removeAttribute("data-openpreview");
+      (v.nextSibling as HTMLButtonElement)?.removeAttribute("data-preview");
     });
-    (document.activeElement.nextSibling as Element).setAttribute("data-openpreview", "true");
+    (document.activeElement.nextSibling as Element).setAttribute("data-preview", "true");
   }
 
   return document.activeElement?.nextSibling;
 };
 
-export const getButton = () => {
+export const getNodeListOfButtons = () => {
   const btn = document.querySelectorAll("button");
   return btn;
 };
 
-export const onKeyUp = (
+export const updateActiveButtonOnKeyUp = (
   ev: { keyCode: number },
   btn: NodeListOf<HTMLButtonElement>,
   index: number,
@@ -32,7 +32,7 @@ export const onKeyUp = (
   return index;
 };
 
-export const onPoint = (
+export const updateActiveButtonOnPoint = (
   ev: PointerEvent,
   btn: NodeListOf<HTMLButtonElement>,
   index: number,
@@ -49,7 +49,7 @@ export const onPoint = (
 };
 
 export const initNavigation = (): any => {
-  let btn = getButton();
+  let btn = getNodeListOfButtons();
   let index = 0;
 
   if (btn.length === 0) {
@@ -57,21 +57,20 @@ export const initNavigation = (): any => {
   }
 
   document.addEventListener("keyup", (ev) => {
-    index = onKeyUp(ev, btn, index, setModal);
+    index = updateActiveButtonOnKeyUp(ev, btn, index, togglePreviewAttribute);
   });
 
-  btn.forEach((a, i) =>
+  btn.forEach((a, i) => {
     a.addEventListener("pointerenter", (ev) => {
-      index = onPoint(ev, btn, index, setModal, i);
-    })
-  );
+      index = updateActiveButtonOnPoint(ev, btn, index, togglePreviewAttribute, i);
+    });
 
-  btn.forEach((a) =>
     a.addEventListener("pointerleave", (ev) => {
-      index = onPoint(ev, btn, index, setModal);
-    })
-  );
+      index = updateActiveButtonOnPoint(ev, btn, index, togglePreviewAttribute);
+    });
+  });
+
   btn[0].focus();
 
-  setModal(btn);
+  togglePreviewAttribute(btn);
 };
