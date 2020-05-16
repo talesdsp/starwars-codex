@@ -1,10 +1,12 @@
 export const setModal = (btn: NodeListOf<HTMLButtonElement>) => {
-  if (document?.activeElement?.nextSibling) {
+  if (document.activeElement?.nextSibling) {
     btn.forEach((v) => {
       (v.nextSibling as HTMLButtonElement)?.removeAttribute("data-openpreview");
     });
     (document.activeElement.nextSibling as Element).setAttribute("data-openpreview", "true");
   }
+
+  return document.activeElement?.nextSibling;
 };
 
 export const getButton = () => {
@@ -12,7 +14,12 @@ export const getButton = () => {
   return btn;
 };
 
-export const onType = (ev: KeyboardEvent, btn: NodeListOf<HTMLButtonElement>, index: number) => {
+export const onKeyUp = (
+  ev: { keyCode: number },
+  btn: NodeListOf<HTMLButtonElement>,
+  index: number,
+  cb: Function
+) => {
   if (ev.keyCode === 38 && index > 0) {
     index--;
     btn[index].focus();
@@ -20,7 +27,7 @@ export const onType = (ev: KeyboardEvent, btn: NodeListOf<HTMLButtonElement>, in
     index++;
     btn[index].focus();
   }
-  setModal(btn);
+  cb(btn);
 
   return index;
 };
@@ -29,13 +36,14 @@ export const onPoint = (
   ev: PointerEvent,
   btn: NodeListOf<HTMLButtonElement>,
   index: number,
+  cb: Function,
   i?: number
 ) => {
   if (i) index = i;
 
   (ev.target as HTMLElement).focus();
 
-  setModal(btn);
+  cb(btn);
 
   return index;
 };
@@ -49,16 +57,18 @@ export const initNavigation = (): any => {
   }
 
   document.addEventListener("keyup", (ev) => {
-    index = onType(ev, btn, index);
+    index = onKeyUp(ev, btn, index, setModal);
   });
+
   btn.forEach((a, i) =>
     a.addEventListener("pointerenter", (ev) => {
-      index = onPoint(ev, btn, index, i);
+      index = onPoint(ev, btn, index, setModal, i);
     })
   );
+
   btn.forEach((a) =>
     a.addEventListener("pointerleave", (ev) => {
-      index = onPoint(ev, btn, index);
+      index = onPoint(ev, btn, index, setModal);
     })
   );
   btn[0].focus();
