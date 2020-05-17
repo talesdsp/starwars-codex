@@ -95,6 +95,14 @@ describe("Utils", () => {
           updateActiveButtonOnKeyUp(down_arrow, list_of_buttons, 1, mockPreview);
           expect(mockPreview.mock.calls.length).toEqual(2);
         });
+
+        it("Should return immediately", () => {
+          expect(
+            updateActiveButtonOnKeyUp({ keyCode: 10 }, list_of_buttons, 1, mockPreview)
+          ).toEqual(1);
+
+          expect(mockPreview).not.toBeCalled();
+        });
       });
     });
   });

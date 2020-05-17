@@ -8,11 +8,20 @@ import { codexReducer, initialState } from "./index";
 import { CodexTypes } from "./types";
 
 describe("Codex reducer", () => {
-  test("Case default state return input value", () => {
+  test("Case default return initial value", () => {
+    let state = codexReducer(initialState, {
+      type: "other",
+      payload: initialState,
+    });
+
+    expect(state).toEqual(initialState);
+  });
+
+  test("Case IS_LOADING return isLoading as truthy", () => {
     let state;
     state = codexReducer(initialState, {
       type: CodexTypes.IS_LOADING,
-      payload: { ...initialState },
+      payload: initialState,
     });
     expect(state).toEqual({
       ...initialState,
@@ -20,7 +29,7 @@ describe("Codex reducer", () => {
     });
   });
 
-  test("Case SET_DATA return input data and isLoading as false", () => {
+  test("Case SET_DATA return input data and isLoading as falsy", () => {
     let state;
     state = codexReducer(initialState, {
       type: CodexTypes.SET_DATA,
