@@ -16,7 +16,7 @@ export const codexReducer: Reducer<CodexState, CodexAction> = (state = initialSt
     case CodexTypes.SET_DATA:
       return {
         ...state,
-        data: action.payload?.data,
+        data: action.payload.data,
         isLoading: false,
       };
     case CodexTypes.IS_LOADING:
