@@ -25,11 +25,11 @@ export interface Codex {
  */
 
 export interface CodexState {
-  readonly data: Codex;
+  readonly data?: Codex;
   readonly isLoading: boolean;
 }
 
 export interface CodexAction {
   type: string;
-  payload: CodexState;
+  payload?: CodexState;
 }
