@@ -12,6 +12,7 @@ describe("Codex reducer", () => {
     let state;
     state = codexReducer(initialState, {
       type: CodexTypes.IS_LOADING,
+      payload: { ...initialState },
     });
     expect(state).toEqual({
       ...initialState,
@@ -71,9 +72,8 @@ describe("Codex reducer", () => {
     });
   });
 });
-// const mockDispatchfn = jest.fn(() => new Promise(resolve => resolve('')));
+
 const mockStore = configureStore();
-const mockDispatchfn = jest.fn();
 
 describe("<User />", () => {
   let wrapper: any;
