@@ -36,6 +36,7 @@ const Footer: React.FC = () => {
 export default Footer;
 
 const TutorialBar = styled.div`
+display:none;
   @media (min-width: 768px) {
     width: 100%;
     display: flex;
