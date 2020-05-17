@@ -1,9 +1,8 @@
 const API_URL = "https://swapi.dev/api";
 
-const swapi = async (path: string, params?: string) => {
-  const response = await fetch(`${API_URL}/${path}${params ? `?${params}` : ""}`);
-  const json = await response.json();
-  return json;
+const swapi = async (path: string, request = fetch) => {
+  const response = await request(`${API_URL}/${path}`);
+  return response;
 };
 
 const extractPathFromUrl = (url: string) => {
@@ -15,4 +14,4 @@ const extractPathFromUrl = (url: string) => {
   return extractedPath;
 };
 
-export { swapi, extractPathFromUrl };
+export { swapi, extractPathFromUrl, API_URL };

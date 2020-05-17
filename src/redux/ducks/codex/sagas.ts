@@ -5,7 +5,8 @@ import { failedRequest, setData } from "./actions";
 
 export function* getData(action: AnyAction) {
   try {
-    let jsonResponse = yield call(swapi, action.payload.urlPath);
+    const response: Response = yield call(swapi, action.payload.urlPath);
+    const jsonResponse = yield response.json();
     yield put(setData(jsonResponse));
   } catch (e) {
     yield put(failedRequest());
