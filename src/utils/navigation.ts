@@ -26,7 +26,10 @@ export const updateActiveButtonOnKeyUp = (
   } else if (ev.keyCode === 40 && index < btn.length - 1) {
     index++;
     btn[index].focus();
+  } else {
+    return index;
   }
+
   cb(btn);
 
   return index;
