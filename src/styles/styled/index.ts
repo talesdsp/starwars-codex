@@ -235,7 +235,7 @@ export const Modal = styled.div`
     margin: 1rem 0;
   }
 
-  &[data-openpreview="true"] {
+  &[data-preview="true"] {
     display: flex;
   }
 
