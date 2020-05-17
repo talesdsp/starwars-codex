@@ -21,17 +21,17 @@ const App: React.FC = () => {
 
   return (
     <BrowserRouter>
-      <audio loop={true} id="audio">
+      <audio loop={true} id="theme">
         <source id="ogg" src={ogg} type="audio/ogg" />
         <source id="mp3" src={mp3} type="audio/mpeg" />
       </audio>
 
-      <audio id="start">
+      <audio id="lightsaberSound">
         <source id="ogg" src={lightsaberOGG} type="audio/ogg" />
         <source id="mp3" src={lightsaberMP3} type="audio/mpeg" />
       </audio>
 
-      <video id="video">
+      <video id="lightsaberVideo">
         <source src={lightning} type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
       </video>
 

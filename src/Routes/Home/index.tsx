@@ -4,12 +4,12 @@ import logo from "../../logo.svg";
 import * as S from "../../styles/styled";
 import { initNavigation } from "../../utils/navigation";
 
-const start = () => {
-  const audio: HTMLMediaElement | null = document.querySelector("#start");
+export const start = () => {
+  const audio: HTMLMediaElement | null = document.querySelector("#lightsaberSound");
   audio?.load();
   audio?.play();
 
-  const video: HTMLMediaElement | null = document.querySelector("#video");
+  const video: HTMLMediaElement | null = document.querySelector("#lightsaberVideo");
   video?.classList.add("play");
   video?.load();
   video?.play();
