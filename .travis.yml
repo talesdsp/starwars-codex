@@ -2,6 +2,8 @@ language: node_js
 node_js:
   - node
   - lts/*
+script:
+  - yarn run test:coveralls
 branches:
   only:
     - master
