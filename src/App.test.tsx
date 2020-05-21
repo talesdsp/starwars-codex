@@ -4,7 +4,7 @@ import App from "./App";
 import "./setupTest";
 
 describe("<App />", () => {
-  it("should render", () => {
+  it(" render", () => {
     const component = shallow(<App />);
     expect(component.name()).toStrictEqual("BrowserRouter");
   });

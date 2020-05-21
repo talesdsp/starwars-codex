@@ -1,7 +1,7 @@
 const API_URL = "https://swapi.dev/api";
 
-const swapi = async (path: string, request = fetch) => {
-  const response = await request(`${API_URL}/${path}/`);
+const swapi = async (path: string) => {
+  const response = await fetch(`${API_URL}/${path}`);
   return response;
 };
 
