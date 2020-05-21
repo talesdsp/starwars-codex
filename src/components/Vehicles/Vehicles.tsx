@@ -1,6 +1,6 @@
 import React from "react";
-import * as S from "../styles/styled";
-import { Vehicle } from "./types";
+import * as S from "../../styles/styled";
+import { Vehicle } from "../types";
 
 const Vehicles: Vehicle = ({ results, closeModal }) => {
   return (

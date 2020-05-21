@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import DownArrow from "../svg/down-arrow.svg";
-import Enter from "../svg/enter.svg";
-import UpArrow from "../svg/up-arrow.svg";
+import DownArrow from "../../svg/down-arrow.svg";
+import Enter from "../../svg/enter.svg";
+import UpArrow from "../../svg/up-arrow.svg";
 
 const Footer: React.FC = () => {
   return (
@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
 export default Footer;
 
 const TutorialBar = styled.div`
-display:none;
+  display: none;
   @media (min-width: 768px) {
     width: 100%;
     display: flex;
@@ -76,7 +76,7 @@ interface IKeyProps {
   readonly space?: boolean;
 }
 
-const TutorialKey = styled.div<IKeyProps>`
+export const TutorialKey = styled.div<IKeyProps>`
   border: 1px solid #333;
   border-radius: 12%;
   padding: 0 0.3rem;
