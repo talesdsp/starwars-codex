@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer/Footer";
 import Categories from "./Routes/Categories";
 import Home from "./Routes/Home";
 import Subject from "./Routes/Subject";
@@ -14,7 +14,7 @@ const lightning = require("./video/lightning.mp4");
 
 const App: React.FC = () => {
   React.useEffect(() => {
-    const soundTrack: HTMLMediaElement | null = document.querySelector("#audio");
+    const soundTrack: HTMLMediaElement | null = document.querySelector("#theme");
     soundTrack?.load();
     soundTrack?.play();
   }, []);

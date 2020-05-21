@@ -1,21 +1,27 @@
 import { API_URL, extractPathFromUrl, swapi } from "./api";
 
-const mockRequest = jest.fn(() => Promise.resolve({ data: "test" }));
+declare let global: { fetch: {} };
+global.fetch = jest.fn(() => Promise.resolve({ data: "test" }));
 
 describe("Api", () => {
   describe("estractPathFromUrl", () => {
-    it("Should not return params from the url", () => {
+    it(" not return params from the url", () => {
       expect(extractPathFromUrl(API_URL)).toEqual(API_URL);
     });
 
-    it("Should return params from the url", () => {
+    it(" return params from the url", () => {
       expect(extractPathFromUrl(API_URL + "/people/1")).toEqual("people/1");
+    });
+    it(" return params from the url", () => {
+      expect(extractPathFromUrl(API_URL + "/planets/?page=2")).toEqual(
+        "planets/?page=2"
+      );
     });
   });
   describe("swapi()", () => {
-    it("Should return data from api call", async () => {
+    it(" return data from api call", async () => {
       //@ts-ignore
-      const result = (await swapi(API_URL, mockRequest)) as { data: string };
+      const result = (await swapi(API_URL)) as { data: string };
       expect(result.data).toEqual("test");
     });
   });

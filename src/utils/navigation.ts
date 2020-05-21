@@ -3,7 +3,10 @@ export const togglePreviewAttribute = (btn: NodeListOf<HTMLButtonElement>) => {
     btn.forEach((v) => {
       (v.nextSibling as HTMLButtonElement)?.removeAttribute("data-preview");
     });
-    (document.activeElement.nextSibling as Element).setAttribute("data-preview", "true");
+    (document.activeElement.nextSibling as Element).setAttribute(
+      "data-preview",
+      "true"
+    );
   }
 
   return document.activeElement?.nextSibling;
@@ -42,22 +45,33 @@ export const updateActiveButtonOnPoint = (
   cb: Function,
   i?: number
 ) => {
-  if (i) index = i;
-
   (ev.target as HTMLElement).focus();
+  if (!i) return index;
+
+  index = i;
 
   cb(btn);
 
   return index;
 };
 
-export const initNavigation = (): any => {
+export const waitButtons = () => {
   let btn = getNodeListOfButtons();
   let index = 0;
 
   if (btn.length === 0) {
-    return setTimeout(initNavigation, 200);
+    return setTimeout(waitButtons, 200);
   }
+
+  initNavigation(btn, index);
+};
+
+export const initNavigation = (
+  btn: NodeListOf<HTMLButtonElement>,
+  index: number
+) => {
+  btn[0].focus();
+  togglePreviewAttribute(btn);
 
   document.addEventListener("keyup", (ev) => {
     index = updateActiveButtonOnKeyUp(ev, btn, index, togglePreviewAttribute);
@@ -65,15 +79,17 @@ export const initNavigation = (): any => {
 
   btn.forEach((a, i) => {
     a.addEventListener("pointerenter", (ev) => {
-      index = updateActiveButtonOnPoint(ev, btn, index, togglePreviewAttribute, i);
+      index = updateActiveButtonOnPoint(
+        ev,
+        btn,
+        index,
+        togglePreviewAttribute,
+        i
+      );
     });
 
     a.addEventListener("pointerleave", (ev) => {
       index = updateActiveButtonOnPoint(ev, btn, index, togglePreviewAttribute);
     });
   });
-
-  btn[0].focus();
-
-  togglePreviewAttribute(btn);
 };
