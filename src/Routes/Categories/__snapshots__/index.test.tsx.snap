@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Categories.tsx render component correctly 1`] = `
+<div>
+  <main
+    class="sc-AxjAm daanbY"
+  >
+    <ul
+      class="sc-AxhUy fEmoMy"
+    >
+      <li
+        class="sc-AxgMl iUzuzw"
+      >
+        <button
+          class="sc-AxheI jfMBhg"
+        >
+          Characters
+        </button>
+      </li>
+      <li
+        class="sc-AxgMl iUzuzw"
+      >
+        <button
+          class="sc-AxheI jfMBhg"
+        >
+          Planets
+        </button>
+      </li>
+      <li
+        class="sc-AxgMl iUzuzw"
+      >
+        <button
+          class="sc-AxheI jfMBhg"
+        >
+          Starships
+        </button>
+      </li>
+      <li
+        class="sc-AxgMl iUzuzw"
+      >
+        <button
+          class="sc-AxheI jfMBhg"
+        >
+          Vehicles
+        </button>
+      </li>
+      <li
+        class="sc-AxgMl iUzuzw"
+      >
+        <button
+          class="sc-AxheI jfMBhg"
+        >
+          Films
+        </button>
+      </li>
+      <li
+        class="sc-AxgMl iUzuzw"
+      >
+        <button
+          class="sc-AxheI jfMBhg"
+        >
+          Species
+        </button>
+      </li>
+      <li
+        class="sc-AxgMl iUzuzw"
+      >
+        <button
+          class="sc-AxheI fOcLmV"
+        >
+          Go Back
+        </button>
+      </li>
+    </ul>
+  </main>
+</div>
+`;

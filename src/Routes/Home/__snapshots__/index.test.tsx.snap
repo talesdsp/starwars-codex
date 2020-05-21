@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home.tsx render component correctly 1`] = `
+<div>
+  <main
+    class="sc-AxjAm dpuDpm"
+  >
+    <img
+      alt="Star Wars"
+      class="sc-AxirZ fILUoV"
+      src="logo.svg"
+    />
+    <div
+      class="sc-AxiKw djZMxv"
+    >
+      <button
+        class="sc-AxheI jfMBhg"
+      >
+        Start
+      </button>
+    </div>
+  </main>
+</div>
+`;
