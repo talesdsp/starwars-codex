@@ -2,18 +2,18 @@ interface ModalProps {
   closeModal: React.MouseEventHandler;
 }
 
-export type Character = React.FC<Subject<Characters>>;
-export type Starship = React.FC<Subject<Starships>>;
-export type Planet = React.FC<Subject<Planets>>;
-export type Specie = React.FC<Subject<Species>>;
-export type Film = React.FC<Subject<Films>>;
-export type Vehicle = React.FC<Subject<Vehicles>>;
+export type Character = React.FC<Subject<ICharacters>>;
+export type Starship = React.FC<Subject<IStarships>>;
+export type Planet = React.FC<Subject<IPlanets>>;
+export type Specie = React.FC<Subject<ISpecies>>;
+export type Film = React.FC<Subject<IFilms>>;
+export type Vehicle = React.FC<Subject<IVehicles>>;
 
 interface Subject<T> extends ModalProps {
   results: T[];
 }
 
-interface Characters {
+export interface ICharacters {
   readonly name: string;
   readonly mass: string;
   readonly height: string;
@@ -32,7 +32,7 @@ interface Characters {
   readonly url: string;
 }
 
-interface Starships {
+export interface IStarships {
   readonly MGLT: string;
   readonly cargo_capacity: string;
   readonly consumables: string;
@@ -53,7 +53,7 @@ interface Starships {
   readonly url: string;
 }
 
-interface Planets {
+export interface IPlanets {
   readonly climate: string;
   readonly created: string;
   readonly diameter: string;
@@ -70,7 +70,7 @@ interface Planets {
   readonly url: string;
 }
 
-interface Species {
+export interface ISpecies {
   readonly average_height: string;
   readonly average_lifespan: string;
   readonly classification: string;
@@ -88,7 +88,7 @@ interface Species {
   readonly url: string;
 }
 
-interface Films {
+export interface IFilms {
   readonly title: string;
   readonly episode_id: number;
   readonly director: string;
@@ -105,7 +105,7 @@ interface Films {
   readonly vehicles: string[];
 }
 
-interface Vehicles {
+export interface IVehicles {
   readonly cargo_capacity: string;
   readonly consumables: string;
   readonly cost_in_credits: string;
