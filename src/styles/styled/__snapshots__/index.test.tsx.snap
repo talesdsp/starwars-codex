@@ -1,0 +1,207 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button enable off button styling 1`] = `
+.c0 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+  background-color: #323535;
+  border: none;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 1rem 0;
+  opacity: 0.7;
+  font-size: 1.6rem;
+  background-color: #111;
+}
+
+.c0:hover,
+.c0:focus {
+  opacity: 1;
+  background-image: linear-gradient( 90deg, #660a2d 0%, #870a2d 5%, #53121a 50%, #870a2d 95%, #660a2d 100% );
+}
+
+.c0 h1 {
+  font-size: 1.6rem;
+}
+
+@media (min-width:768px) {
+  .c0 {
+    max-width: 40vw;
+  }
+}
+
+<button
+  className="c0"
+/>
+`;
+
+exports[`Button enable pagination styling 1`] = `
+.c0 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+  background-color: #323535;
+  border: none;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 1rem 0;
+  opacity: 0.7;
+  font-size: 1.6rem;
+  color: #ffe81f;
+  background-color: unset;
+  background-color: unset;
+  padding: 0.5rem;
+  margin: 0 0.5rem;
+}
+
+.c0:hover,
+.c0:focus {
+  opacity: 1;
+  background-image: linear-gradient( 90deg, #660a2d 0%, #870a2d 5%, #53121a 50%, #870a2d 95%, #660a2d 100% );
+}
+
+.c0 h1 {
+  font-size: 1.6rem;
+}
+
+@media (min-width:768px) {
+  .c0 {
+    max-width: 40vw;
+  }
+}
+
+<button
+  className="c0"
+/>
+`;
+
+exports[`Button render default style rules 1`] = `
+.c0 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+  background-color: #323535;
+  border: none;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 1rem 0;
+  opacity: 0.7;
+  font-size: 1.6rem;
+}
+
+.c0:hover,
+.c0:focus {
+  opacity: 1;
+  background-image: linear-gradient( 90deg, #660a2d 0%, #870a2d 5%, #53121a 50%, #870a2d 95%, #660a2d 100% );
+}
+
+.c0 h1 {
+  font-size: 1.6rem;
+}
+
+@media (min-width:768px) {
+  .c0 {
+    max-width: 40vw;
+  }
+}
+
+<button
+  className="c0"
+/>
+`;
+
+exports[`Window have NO animation 1`] = `
+.c0 {
+  position: relative;
+  width: 100vw;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+<main
+  className="c0"
+/>
+`;
+
+exports[`Window have animation 1`] = `
+.c0 {
+  position: relative;
+  width: 100vw;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100vh;
+  -webkit-animation: ibKLYw 1.25s;
+  animation: ibKLYw 1.25s;
+}
+
+<main
+  className="c0"
+/>
+`;

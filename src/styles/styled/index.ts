@@ -110,7 +110,7 @@ export const Item = styled.li`
 `;
 
 interface IButtonProps {
-  readonly number?: boolean;
+  readonly paginate?: boolean;
   readonly off?: boolean;
 }
 
@@ -130,7 +130,7 @@ export const Button = styled.button<IButtonProps>`
   font-size: 1.6rem;
 
   ${(props) =>
-    props.number &&
+    props.paginate &&
     css`
       color: #ffe81f;
       background-color: unset;
