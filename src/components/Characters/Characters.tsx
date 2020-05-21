@@ -1,6 +1,6 @@
 import React from "react";
-import * as S from "../styles/styled";
-import { Character } from "./types";
+import * as S from "../../styles/styled";
+import { Character } from "../types";
 
 const Characters: Character = ({ results, closeModal }) => {
   return (

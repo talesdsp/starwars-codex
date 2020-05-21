@@ -1,6 +1,6 @@
 import React from "react";
-import * as S from "../styles/styled";
-import { Film } from "./types";
+import * as S from "../../styles/styled";
+import { Film } from "../types";
 
 const Films: Film = ({ results, closeModal }) => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
-import * as S from "../styles/styled";
-import { Planet } from "./types";
+import * as S from "../../styles/styled";
+import { Planet } from "../types";
 
 const Planets: Planet = ({ results, closeModal }) => {
   return (

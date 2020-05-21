@@ -1,6 +1,6 @@
 import React from "react";
-import * as S from "../styles/styled";
-import { Starship } from "./types";
+import * as S from "../../styles/styled";
+import { Starship } from "../types";
 
 const Starships: Starship = ({ results, closeModal }) => {
   return (

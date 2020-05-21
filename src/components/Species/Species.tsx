@@ -1,6 +1,6 @@
 import React from "react";
-import * as S from "../styles/styled";
-import { Specie } from "./types";
+import * as S from "../../styles/styled";
+import { Specie } from "../types";
 
 const Species: Specie = ({ results, closeModal }) => {
   return (
