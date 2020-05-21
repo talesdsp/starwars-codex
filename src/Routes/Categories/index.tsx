@@ -1,16 +1,20 @@
 import React, { useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { RouteComponentProps } from "react-router-dom";
 import * as S from "../../styles/styled";
-import { initNavigation } from "../../utils/navigation";
+import { waitButtons } from "../../utils/navigation";
 
-const Categories: React.FC = () => {
-  type URL = "people" | "planets" | "starships" | "vehicles" | "films" | "species";
+const Categories: React.FC<RouteComponentProps> = ({ history }) => {
+  type URL =
+    | "people"
+    | "planets"
+    | "starships"
+    | "vehicles"
+    | "films"
+    | "species";
 
   useEffect(() => {
-    initNavigation();
+    waitButtons();
   }, []);
-
-  const history = useHistory();
 
   const goto = (url: URL) => {
     history.push(`/categories/${url}`);

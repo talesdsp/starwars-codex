@@ -1,21 +1,21 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useRouteMatch } from "react-router-dom";
-import Buttons from "../../components/Buttons";
-import Characters from "../../components/Characters";
-import Films from "../../components/Films";
-import Planets from "../../components/Planets";
-import Species from "../../components/Species";
-import Starships from "../../components/Starships";
-import Vehicles from "../../components/Vehicles";
+import { RouteComponentProps } from "react-router-dom";
+import Buttons from "../../components/Buttons/Buttons";
+import Characters from "../../components/Characters/Characters";
+import Films from "../../components/Films/Films";
+import Planets from "../../components/Planets/Planets";
+import Species from "../../components/Species/Species";
+import Starships from "../../components/Starships/Starships";
+import Vehicles from "../../components/Vehicles/Vehicles";
 import { ApplicationState } from "../../redux";
 import { getAsyncData, triggerLoading } from "../../redux/ducks/codex/actions";
 import * as S from "../../styles/styled";
 import Spinner from "../../styles/styled/Spinner";
-import { initNavigation } from "../../utils";
+import { waitButtons } from "../../utils";
 import { SelectComponent, SParams } from "../types";
 
-const Subject: React.FC = () => {
+const Subject: React.FC<RouteComponentProps<SParams>> = ({ match }) => {
   const [
     {
       data: { results, count },
@@ -24,12 +24,10 @@ const Subject: React.FC = () => {
   ] = useSelector((state: ApplicationState) => [state.codex]);
   const dispatch = useDispatch();
 
-  const match = useRouteMatch<SParams>();
-
   const theme = match.params.theme;
 
   useEffect(() => {
-    initNavigation();
+    waitButtons();
     dispatch(triggerLoading());
     dispatch(getAsyncData(theme));
   }, [dispatch, theme]);

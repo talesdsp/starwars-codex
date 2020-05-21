@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { RouteComponentProps } from "react-router-dom";
 import logo from "../../logo.svg";
 import * as S from "../../styles/styled";
-import { initNavigation } from "../../utils/navigation";
+import { waitButtons } from "../../utils/navigation";
 
 export const start = () => {
   const audio: HTMLMediaElement | null = document.querySelector("#lightsaberSound");
+  audio?.classList.add("play");
   audio?.load();
   audio?.play();
+  audio?.addEventListener("ended", () => audio.classList.remove("play"));
 
   const video: HTMLMediaElement | null = document.querySelector("#lightsaberVideo");
   video?.classList.add("play");
@@ -18,14 +20,12 @@ export const start = () => {
   return { audio, video };
 };
 
-const Home: React.FC = () => {
+const Home: React.FC<RouteComponentProps> = ({ history }) => {
   const [shake, setShake] = useState(false);
 
   useEffect(() => {
-    initNavigation();
+    waitButtons();
   }, []);
-
-  const history = useHistory();
 
   const goto = (url: string) => {
     start();
