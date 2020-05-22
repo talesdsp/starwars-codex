@@ -4,8 +4,8 @@ import Footer from "./components/Footer/Footer";
 import Categories from "./Routes/Categories";
 import Home from "./Routes/Home";
 import Subject from "./Routes/Subject";
-import "./styles/scss/index.scss";
 import Stars from "./styles/styled/Stars";
+
 const lightsaberMP3 = require("./audio/sfx/lightsaber.mp3");
 const lightsaberOGG = require("./audio/sfx/lightsaber.ogg");
 const mp3 = require("./audio/starwars.mp3");
