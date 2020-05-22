@@ -1,9 +1,12 @@
+import { Codex } from "../redux/ducks/codex/types";
+
 const API_URL = "https://swapi.dev/api";
 
-const swapi = async (path: string) => {
+async function swapi(path: string): Promise<{ data: Codex }> {
   const response = await fetch(`${API_URL}/${path}`);
-  return response;
-};
+  const result = await response.json();
+  return result;
+}
 
 const extractPathFromUrl = (url: string) => {
   const rgx = /(https?:\/\/\w+\.\w+\/api\/)/g;
