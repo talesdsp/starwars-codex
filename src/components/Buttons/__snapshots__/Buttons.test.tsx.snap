@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Buttons.tsx store off renders 1`] = `
+<div>
+  <footer
+    class="sc-fzozJi bBjIJb"
+  >
+    <button
+      class="sc-AxheI fOcLmV"
+    >
+      Go Back
+    </button>
+    <button
+      class="sc-AxheI fOcLmV"
+    >
+      Next
+    </button>
+    <div
+      class="sc-fzoLsD wRDqf"
+    >
+      <button
+        class="sc-AxheI fEbfFm"
+        tabindex="0"
+      >
+        1
+      </button>
+    </div>
+  </footer>
+</div>
+`;
+
+exports[`Buttons.tsx store on render component correctly 1`] = `
+<div>
+  <footer
+    class="sc-fzozJi bBjIJb"
+  >
+    <button
+      class="sc-AxheI jfMBhg"
+    >
+      Previous
+    </button>
+    <button
+      class="sc-AxheI jfMBhg"
+    >
+      Next
+    </button>
+    <div
+      class="sc-fzoLsD wRDqf"
+    >
+      <button
+        class="sc-AxheI fEbfFm"
+        tabindex="0"
+      >
+        1
+      </button>
+    </div>
+  </footer>
+</div>
+`;
