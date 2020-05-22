@@ -1,12 +1,15 @@
-import { AnyAction } from "redux";
 import { call, put } from "redux-saga/effects";
 import { swapi } from "../../../services/api";
 import { failedRequest, setData } from "./actions";
 
-export function* getData(action: AnyAction) {
+interface Action {
+  type: string;
+  payload: { urlPath: string };
+}
+
+export function* getData(action: Action) {
   try {
-    const response: Response = yield call(swapi, action.payload.urlPath);
-    const jsonResponse = yield response.json();
+    const jsonResponse = yield call(swapi, action.payload.urlPath);
     yield put(setData(jsonResponse));
   } catch (e) {
     yield put(failedRequest());
