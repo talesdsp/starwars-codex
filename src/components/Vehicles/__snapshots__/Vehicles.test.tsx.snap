@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Starships.tsx render Starships component with correct data 1`] = `
+<li
+  className="sc-AxgMl iUzuzw"
+>
+  <button
+    className="sc-AxheI jfMBhg"
+  >
+    <h1>
+      Sand Crawler
+    </h1>
+  </button>
+  <div
+    className="sc-AxmLO dWmjtW"
+  >
+    <div
+      className="sc-Axmtr flHwwi"
+      onClick={[MockFunction]}
+    />
+    <h1>
+      Sand Crawler
+    </h1>
+    <p>
+      model: 
+      Digger Crawler
+    </p>
+    <p>
+      manufacturer: 
+      Corellia Mining Corporation
+    </p>
+    <p>
+      passengers: 
+      30
+    </p>
+    <p>
+      pilots: 
+    </p>
+    <p>
+      const in credits: 
+      150000
+    </p>
+  </div>
+</li>
+`;

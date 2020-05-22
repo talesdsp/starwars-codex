@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Film.tsx render Film component with correct data 1`] = `
+<li
+  className="sc-AxgMl iUzuzw"
+>
+  <button
+    className="sc-AxheI jfMBhg"
+  >
+    <h1>
+      A New Hope
+    </h1>
+  </button>
+  <div
+    className="sc-AxmLO dWmjtW"
+  >
+    <div
+      className="sc-Axmtr flHwwi"
+      onClick={[MockFunction]}
+    />
+    <h1>
+      A New Hope
+    </h1>
+    <p>
+      episode: 
+      4
+    </p>
+    <p>
+      director: 
+      George Lucas
+    </p>
+    <p>
+      producer: 
+      Gary Kurtz, Rick McCallum
+    </p>
+    <p>
+      opening crawl: 
+      It is a period of civil war.
+
+Rebel spaceships, striking
+
+from a hidden base, have won
+
+their first 
+      ...
+    </p>
+  </div>
+</li>
+`;

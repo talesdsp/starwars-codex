@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Starships.tsx render Starships component with correct data 1`] = `
+<li
+  className="sc-AxgMl iUzuzw"
+>
+  <button
+    className="sc-AxheI jfMBhg"
+  >
+    <h1>
+      Death Star
+    </h1>
+  </button>
+  <div
+    className="sc-AxmLO dWmjtW"
+  >
+    <div
+      className="sc-Axmtr flHwwi"
+      onClick={[MockFunction]}
+    />
+    <h1>
+      Death Star
+    </h1>
+    <p>
+      model: 
+      DS-1 Orbital Battle Station
+    </p>
+    <p>
+      manufacturer: 
+      Imperial Department of Military Research, Sienar Fleet Systems
+    </p>
+    <p>
+      passengers: 
+      843342
+    </p>
+    <p>
+      pilots: 
+    </p>
+    <p>
+      cost_in_credits: 
+      1000000000000
+    </p>
+  </div>
+</li>
+`;

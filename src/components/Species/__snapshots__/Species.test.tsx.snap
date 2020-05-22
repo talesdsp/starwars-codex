@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Species.tsx render Species component with correct data 1`] = `
+<li
+  className="sc-AxgMl iUzuzw"
+>
+  <button
+    className="sc-AxheI jfMBhg"
+  >
+    <h1>
+      Wookie
+    </h1>
+  </button>
+  <div
+    className="sc-AxmLO dWmjtW"
+  >
+    <div
+      className="sc-Axmtr flHwwi"
+      onClick={[MockFunction]}
+    />
+    <h1>
+      Wookie
+    </h1>
+    <p>
+      classification: 
+      Mammal
+    </p>
+    <p>
+      designation: 
+      Sentient
+    </p>
+    <p>
+      language: 
+      Shyriiwook
+    </p>
+    <p>
+      average_height: 
+      2.1
+    </p>
+    <p>
+      average_lifespan: 
+      400
+    </p>
+  </div>
+</li>
+`;
