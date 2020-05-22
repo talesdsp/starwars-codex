@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Planets.tsx render Planets component with correct data 1`] = `
+<li
+  className="sc-AxgMl iUzuzw"
+>
+  <button
+    className="sc-AxheI jfMBhg"
+  >
+    <h1>
+      Tatooine
+    </h1>
+  </button>
+  <div
+    className="sc-AxmLO dWmjtW"
+  >
+    <div
+      className="sc-Axmtr flHwwi"
+      onClick={[MockFunction]}
+    />
+    <h1>
+      Tatooine
+    </h1>
+    <p>
+      terrain: 
+      Dessert
+    </p>
+    <p>
+      climate: 
+      Arid
+    </p>
+    <p>
+      population: 
+      120000
+    </p>
+    <p>
+      orbital period: 
+      304
+    </p>
+    <p>
+      gravity: 
+      1
+    </p>
+  </div>
+</li>
+`;

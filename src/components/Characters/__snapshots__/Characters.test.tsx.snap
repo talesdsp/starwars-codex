@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Character.tsx render Character component with correct data 1`] = `
+<li
+  className="sc-AxgMl iUzuzw"
+>
+  <button
+    className="sc-AxheI jfMBhg"
+  >
+    <h1>
+      Luke Skywalker
+    </h1>
+    s
+  </button>
+  <div
+    className="sc-AxmLO dWmjtW"
+  >
+    <div
+      className="sc-Axmtr flHwwi"
+      onClick={[MockFunction]}
+    />
+    <h1>
+      Luke Skywalker
+    </h1>
+    <p>
+      gender: 
+      Male
+    </p>
+    <p>
+      weight: 
+      77
+      kg
+    </p>
+    <p>
+      height: 
+      172
+      cm
+    </p>
+  </div>
+</li>
+`;
