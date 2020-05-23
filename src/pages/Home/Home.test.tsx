@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom";
 import { fireEvent, render, screen } from "@testing-library/react";
 import * as React from "react";
-import Home, { start } from "./Home";
+import Home, { playLightsaberFX } from "./Home";
 
 const stateSetter = jest.fn();
 
@@ -57,17 +57,17 @@ describe("Home.tsx", () => {
   });
 });
 
-describe("start()", () => {
+describe("playLightsaberFX()", () => {
   document.body.innerHTML = `<audio id="lightsaberSound"></audio>'+'<video id="lightsaberVideo"><source  type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' /></video>`;
 
   it("play sound and video", () => {
-    const { audio, video } = start();
+    const { audio, video } = playLightsaberFX();
     expect(audio).toHaveClass("play");
     expect(video).toHaveClass("play");
   });
 
   it("remove class on ended event", () => {
-    const { audio, video } = start();
+    const { audio, video } = playLightsaberFX();
 
     audio && fireEvent.ended(audio);
     video && fireEvent.ended(video);
@@ -78,7 +78,7 @@ describe("start()", () => {
 
   it("both audio and video are null", () => {
     document.body.innerHTML = "";
-    const { audio, video } = start();
+    const { audio, video } = playLightsaberFX();
 
     expect(audio).toBeNull();
     expect(video).toBeNull();

@@ -1,9 +1,9 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { ApplicationState } from "../../../../redux";
-import { getAsyncData, triggerLoading } from "../../../../redux/ducks/codex/actions";
-import { extractPathFromUrl } from "../../../../services/api";
+import { extractPathFromUrl } from "../../services/api";
+import { ApplicationState } from "../../store";
+import { getAsyncData, triggerLoading } from "../../store/codex/actions";
 import { Button, Controls, Page } from "./styled";
 
 interface ButtonProps {

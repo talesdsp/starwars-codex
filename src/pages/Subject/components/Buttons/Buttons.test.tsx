@@ -3,8 +3,8 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import * as React from "react";
 import * as redux from "react-redux";
 import configureStore from "redux-mock-store";
-import { ApplicationState } from "../../../../redux";
-import { CodexState } from "../../../../redux/ducks/codex/types";
+import { ApplicationState } from "../../store";
+import { CodexState } from "../../store/codex/types";
 import Buttons, { selector } from "./Buttons";
 
 const mockGoBack = jest.fn();
@@ -23,7 +23,6 @@ jest.mock("react-redux", () => ({
   useDispatch: () => mockDispatch,
 }));
 
-const use_selector = jest.spyOn(redux, "useSelector");
 const use_dispatcher = jest.spyOn(redux, "useDispatch");
 
 const initial_state = {

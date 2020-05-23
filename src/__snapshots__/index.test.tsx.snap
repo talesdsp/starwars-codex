@@ -63,7 +63,16 @@ Array [
     <img
       alt="Star Wars"
       className="sc-fzqNJr kAiDBy"
-      src="logo.svg"
+      src={
+        Object {
+          "ReactComponent": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "__esModule": true,
+          "default": "star-logo.svg",
+        }
+      }
     />
     <div
       className="sc-fzqBZW hymcIh"

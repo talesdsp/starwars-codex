@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { RouteComponentProps } from "react-router-dom";
-import logo from "../../logo.svg";
+import { svg } from "../../assets/";
 import { waitButtons } from "../../utils/navigation";
 import { Button, HomeWrapper, StarLogo, Window } from "./styled";
 
-export const start = () => {
+export const playLightsaberFX = () => {
   const audio: HTMLMediaElement | null = document.querySelector("#lightsaberSound");
   audio?.classList.add("play");
   audio?.load();
@@ -28,7 +28,7 @@ const Home: React.FC<RouteComponentProps> = ({ history }) => {
   }, []);
 
   const goto = (url: string) => {
-    start();
+    playLightsaberFX();
     setShake(true);
     setTimeout(() => {
       setShake(false);
@@ -38,7 +38,7 @@ const Home: React.FC<RouteComponentProps> = ({ history }) => {
 
   return (
     <Window shake={shake}>
-      <StarLogo src={logo} alt="Star Wars" />
+      <StarLogo src={svg.starLogo} alt="Star Wars" />
       <HomeWrapper>
         <Button onClick={() => goto("/categories")}>Start</Button>
       </HomeWrapper>
