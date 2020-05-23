@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Subject.tsx take snapshot 1`] = `
+Array [
+  <h1
+    className="sc-AxhCb cOZZlm"
+  >
+    people
+  </h1>,
+  <ul
+    className="sc-AxhUy fEmoMy"
+  >
+    <li
+      className="sc-AxgMl iUzuzw"
+    >
+      <button
+        className="sc-AxheI jfMBhg"
+      >
+        <h1>
+          people
+        </h1>
+        s
+      </button>
+      <div
+        className="sc-AxmLO dWmjtW"
+      >
+        <div
+          className="sc-Axmtr flHwwi"
+          onClick={[Function]}
+        />
+        <h1>
+          people
+        </h1>
+        <p>
+          gender: 
+          male
+        </p>
+        <p>
+          weight: 
+          12
+          kg
+        </p>
+        <p>
+          height: 
+          12
+          cm
+        </p>
+      </div>
+    </li>
+  </ul>,
+  <footer
+    className="sc-fzozJi bBjIJb"
+  >
+    <button
+      className="sc-AxheI jfMBhg"
+      onClick={[Function]}
+    >
+      Previous
+    </button>
+    <button
+      className="sc-AxheI jfMBhg"
+      onClick={[Function]}
+    >
+      Next
+    </button>
+    <div
+      className="sc-fzoLsD wRDqf"
+    >
+      <button
+        className="sc-AxheI fEbfFm"
+        onClick={[Function]}
+        tabIndex={0}
+      >
+        1
+      </button>
+    </div>
+  </footer>,
+]
+`;
