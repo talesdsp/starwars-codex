@@ -2,9 +2,7 @@ import "@testing-library/jest-dom";
 import { fireEvent, render, screen } from "@testing-library/react";
 import * as React from "react";
 import * as redux from "react-redux";
-import configureStore from "redux-mock-store";
-import { ApplicationState } from "../../store";
-import { CodexState } from "../../store/codex/types";
+import { mockEmpty, mockStore } from "../../__fixtures";
 import Buttons, { selector } from "./Buttons";
 
 const mockGoBack = jest.fn();
@@ -24,20 +22,6 @@ jest.mock("react-redux", () => ({
 }));
 
 const use_dispatcher = jest.spyOn(redux, "useDispatch");
-
-const initial_state = {
-  data: { count: 10, previous: "previous", next: "next", results: [{}] },
-  isLoading: false,
-};
-
-const nullState = {
-  data: { count: 1, previous: null, next: null, results: [{}] },
-  isLoading: false,
-};
-
-const reducer = (state: CodexState) => ({ codex: state });
-const mockStore = configureStore<ApplicationState>()(reducer(initial_state));
-const mockEmpty = configureStore<ApplicationState>()(reducer(nullState));
 
 describe("Buttons.tsx", () => {
   describe("store on", () => {
@@ -75,8 +59,8 @@ describe("Buttons.tsx", () => {
     });
 
     it("trigger onClick handler", () => {
-      const button = screen.getByText(/\d/g);
-      fireEvent.click(button);
+      const button = screen.getAllByText(/\d/g);
+      fireEvent.click(button[0]);
       expect(use_dispatcher).toBeCalledTimes(1);
       expect(mockDispatch).toBeCalledTimes(2);
     });

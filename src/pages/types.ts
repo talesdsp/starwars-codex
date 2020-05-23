@@ -16,3 +16,5 @@ export interface SelectComponent {
   species: JSX.Element;
   films: JSX.Element;
 }
+
+export type URL = "people" | "planets" | "starships" | "vehicles" | "films" | "species";
