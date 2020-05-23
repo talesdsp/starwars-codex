@@ -5,8 +5,8 @@ import * as React from "react";
 import * as redux from "react-redux";
 import renderer from "react-test-renderer";
 import configureStore from "redux-mock-store";
-import { ApplicationState } from "../../redux";
-import { CodexState } from "../../redux/ducks/codex/types";
+import { ApplicationState } from "./store";
+import { CodexState } from "./store/codex/types";
 import Subject, { selector } from "./Subject";
 const mockDispatch = jest.fn();
 
@@ -38,11 +38,6 @@ const initial_state = {
   isLoading: false,
 };
 
-const nullState = {
-  data: { count: 1, previous: null, next: null, results: [{}] },
-  isLoading: false,
-};
-
 const mockMatch = {
   params: {
     theme: "people",
@@ -53,7 +48,6 @@ const location = jest.fn();
 
 const reducer = (state: CodexState) => ({ codex: state });
 const mockStore = configureStore<ApplicationState>()(reducer(initial_state));
-const mockEmpty = configureStore<ApplicationState>()(reducer(nullState));
 
 let use_effect: jest.spyOn<typeof React, "useEffect">;
 
@@ -69,14 +63,12 @@ describe("Subject.tsx", () => {
     expect(snap).toMatchSnapshot();
   });
 
-  let result: { container: HTMLElement };
-
   beforeEach(async () => {
     use_effect = jest.spyOn(React, "useEffect");
 
     use_effect.mockImplementationOnce((f) => f());
 
-    result = render(
+    render(
       <redux.Provider store={mockStore}>
         <Subject history={history} location={location} match={mockMatch} />
       </redux.Provider>

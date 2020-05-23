@@ -8,7 +8,7 @@ exports[`Home.tsx render component correctly 1`] = `
     <img
       alt="Star Wars"
       class="sc-fzozJi eAHfzr"
-      src="logo.svg"
+      src="[object Object]"
     />
     <div
       class="sc-AxmLO jzjKvw"

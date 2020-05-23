@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RouteComponentProps } from "react-router-dom";
-import { ApplicationState } from "../../redux";
-import { getAsyncData, triggerLoading } from "../../redux/ducks/codex/actions";
 import { waitButtons } from "../../utils";
 import { SelectComponent, SParams } from "../types";
 import { Buttons, Characters, Films, Planets, Species, Starships, Vehicles } from "./components";
+import { ApplicationState } from "./store";
+import { getAsyncData, triggerLoading } from "./store/codex/actions";
 import { List, Role, Spinner } from "./styled";
+
 export const selector = (state: ApplicationState) => state.codex;
 
 const Subject: React.FC<RouteComponentProps<SParams>> = ({ match }) => {
