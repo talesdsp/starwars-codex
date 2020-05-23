@@ -10,6 +10,7 @@ export const audio = {
 };
 
 export const svg = {
+  starLogo: require("./svg/star-logo.svg"),
   downArrow: require("./svg/down-arrow.svg"),
   enter: require("./svg/enter.svg"),
   upArrow: require("./svg/up-arrow.svg"),
