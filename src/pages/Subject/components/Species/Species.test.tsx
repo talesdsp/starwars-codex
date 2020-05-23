@@ -18,16 +18,11 @@ describe("Species.tsx", () => {
       language: "Shyriiwook",
       name: "Wookie",
       people: ["https://swapi.dev/api/people/13/"],
-      films: [
-        "https://swapi.dev/api/films/1/",
-        "https://swapi.dev/api/films/2/",
-      ],
+      films: ["https://swapi.dev/api/films/1/", "https://swapi.dev/api/films/2/"],
       skin_colors: "gray",
       url: "https://swapi.dev/api/species/3/",
     };
-    const component = renderer.create(
-      <Species results={[results]} closeModal={jest.fn(() => {})} />
-    );
+    const component = renderer.create(<Species results={[results]} />);
     expect(component.toJSON()).toMatchSnapshot();
   });
 });

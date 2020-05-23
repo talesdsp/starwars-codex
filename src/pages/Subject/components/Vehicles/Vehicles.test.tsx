@@ -23,9 +23,7 @@ describe("Starships.tsx", () => {
       url: "https://swapi.dev/api/vehicles/4/",
       vehicle_class: "wheeled",
     };
-    const component = renderer.create(
-      <Vehicles results={[results]} closeModal={jest.fn(() => {})} />
-    );
+    const component = renderer.create(<Vehicles results={[results]} />);
     expect(component.toJSON()).toMatchSnapshot();
   });
 });

@@ -2,20 +2,20 @@
 
 exports[`Starships.tsx render Starships component with correct data 1`] = `
 <li
-  className="sc-AxgMl iUzuzw"
+  className="sc-AxiKw sc-AxheI bUcjaj"
 >
   <button
-    className="sc-AxheI jfMBhg"
+    className="sc-AxhCb sc-Axmtr gFtPZS"
   >
     <h1>
       Death Star
     </h1>
   </button>
   <div
-    className="sc-AxmLO dWmjtW"
+    className="sc-fzozJi jkmZKH"
   >
     <div
-      className="sc-Axmtr flHwwi"
+      className="sc-AxmLO ebPzVP"
       onClick={[Function]}
     />
     <h1>

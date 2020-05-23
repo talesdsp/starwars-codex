@@ -3,18 +3,18 @@
 exports[`Home.tsx render component correctly 1`] = `
 <div>
   <main
-    class="sc-AxjAm dpuDpm"
+    class="sc-AxjAm sc-AxhUy fgjyyt"
   >
     <img
       alt="Star Wars"
-      class="sc-AxirZ fILUoV"
+      class="sc-fzozJi eAHfzr"
       src="logo.svg"
     />
     <div
-      class="sc-AxiKw djZMxv"
+      class="sc-AxmLO jzjKvw"
     >
       <button
-        class="sc-AxheI jfMBhg"
+        class="sc-AxhCb sc-Axmtr gFtPZS"
       >
         Start
       </button>

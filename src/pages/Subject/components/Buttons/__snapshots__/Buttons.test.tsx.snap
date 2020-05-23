@@ -3,23 +3,23 @@
 exports[`Buttons.tsx store off renders 1`] = `
 <div>
   <footer
-    class="sc-fzozJi bBjIJb"
+    class="sc-AxmLO fZfazS"
   >
     <button
-      class="sc-AxheI fOcLmV"
+      class="sc-AxhCb sc-Axmtr gyNiSL"
     >
       Go Back
     </button>
     <button
-      class="sc-AxheI fOcLmV"
+      class="sc-AxhCb sc-Axmtr gyNiSL"
     >
       Next
     </button>
     <div
-      class="sc-fzoLsD wRDqf"
+      class="sc-fzozJi dshpyh"
     >
       <button
-        class="sc-AxheI fEbfFm"
+        class="sc-AxhCb sc-Axmtr fIjFPo"
         tabindex="0"
       >
         1
@@ -32,23 +32,23 @@ exports[`Buttons.tsx store off renders 1`] = `
 exports[`Buttons.tsx store on render component correctly 1`] = `
 <div>
   <footer
-    class="sc-fzozJi bBjIJb"
+    class="sc-AxmLO fZfazS"
   >
     <button
-      class="sc-AxheI jfMBhg"
+      class="sc-AxhCb sc-Axmtr gFtPZS"
     >
       Previous
     </button>
     <button
-      class="sc-AxheI jfMBhg"
+      class="sc-AxhCb sc-Axmtr gFtPZS"
     >
       Next
     </button>
     <div
-      class="sc-fzoLsD wRDqf"
+      class="sc-fzozJi dshpyh"
     >
       <button
-        class="sc-AxheI fEbfFm"
+        class="sc-AxhCb sc-Axmtr fIjFPo"
         tabindex="0"
       >
         1

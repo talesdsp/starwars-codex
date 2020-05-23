@@ -23,9 +23,7 @@ describe("Character.tsx", () => {
       url: "https://swapi.dev/api/people/1/",
       vehicles: ["https://swapi.dev/api/vehicles/14/"],
     };
-    const component = renderer.create(
-      <Characters results={[results]} closeModal={jest.fn(() => {})} />
-    );
+    const component = renderer.create(<Characters results={[results]} />);
     expect(component.toJSON()).toMatchSnapshot();
   });
 });
