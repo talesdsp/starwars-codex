@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import DownArrow from "../../svg/down-arrow.svg";
-import Enter from "../../svg/enter.svg";
-import UpArrow from "../../svg/up-arrow.svg";
+import { svg } from "../../assets";
 
 const Footer: React.FC = () => {
   return (
@@ -10,21 +8,21 @@ const Footer: React.FC = () => {
       <TutorialItems>
         <TutorialItem>
           <TutorialKey>
-            <img src={UpArrow} alt="up-arrow" />
+            <img src={svg.upArrow} alt="up-arrow" />
           </TutorialKey>
           - Up
         </TutorialItem>
 
         <TutorialItem>
           <TutorialKey>
-            <img src={DownArrow} alt="down-arrow" />
+            <img src={svg.downArrow} alt="down-arrow" />
           </TutorialKey>
           - Down
         </TutorialItem>
 
         <TutorialItem>
           <TutorialKey>
-            <img src={Enter} alt="enter-key" />
+            <img src={svg.enter} alt="enter-key" />
           </TutorialKey>
           - Confirm
         </TutorialItem>
