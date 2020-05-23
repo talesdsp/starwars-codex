@@ -15,13 +15,13 @@ import Spinner from "../../styles/styled/Spinner";
 import { waitButtons } from "../../utils";
 import { SelectComponent, SParams } from "../types";
 
+export const selector = (state: ApplicationState) => state.codex;
+
 const Subject: React.FC<RouteComponentProps<SParams>> = ({ match }) => {
-  const [
-    {
-      data: { results, count },
-      isLoading,
-    },
-  ] = useSelector((state: ApplicationState) => [state.codex]);
+  const {
+    data: { results, count },
+    isLoading,
+  } = useSelector(selector);
   const dispatch = useDispatch();
 
   const theme = match.params.theme;
@@ -32,18 +32,14 @@ const Subject: React.FC<RouteComponentProps<SParams>> = ({ match }) => {
     dispatch(getAsyncData(theme));
   }, [dispatch, theme]);
 
-  const closeModal: React.MouseEventHandler<Node> = (ev) => {
-    (ev.target as Node).parentElement?.removeAttribute("data-preview");
-  };
-
   const Which = () => {
     const selectedComponent: SelectComponent = {
-      people: <Characters results={results} closeModal={closeModal} />,
-      planets: <Planets results={results} closeModal={closeModal} />,
-      vehicles: <Vehicles results={results} closeModal={closeModal} />,
-      starships: <Starships results={results} closeModal={closeModal} />,
-      species: <Species results={results} closeModal={closeModal} />,
-      films: <Films results={results} closeModal={closeModal} />,
+      people: <Characters results={results} />,
+      planets: <Planets results={results} />,
+      vehicles: <Vehicles results={results} />,
+      starships: <Starships results={results} />,
+      species: <Species results={results} />,
+      films: <Films results={results} />,
     };
 
     return selectedComponent[theme];
@@ -53,7 +49,7 @@ const Subject: React.FC<RouteComponentProps<SParams>> = ({ match }) => {
     <>
       <S.Role>{theme}</S.Role>
 
-      {isLoading ? <Spinner /> : ""}
+      {isLoading && <Spinner />}
 
       <S.List>{results && Which()}</S.List>
 
