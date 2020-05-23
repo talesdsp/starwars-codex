@@ -20,14 +20,12 @@ describe("Utils", () => {
 
     beforeEach(() => {
       document.body.innerHTML =
-        "<div><button id='b1'></button><hr id='0'/></div" +
-        "<div><button id='b2'></button><hr id='1'/></div" +
-        "<div><button id='b3'></button><hr id='2'/></div" +
-        "<div><button id='b4'></button><hr id='3' data-preview='true'/></div";
+        "<div><button id='b1'></button><hr id='0'/></div>" +
+        "<div><button id='b2'></button><hr id='1'/></div>" +
+        "<div><button id='b3'></button><hr id='2'/></div>" +
+        "<div><button id='b4'></button><hr id='3' data-preview='true'/></div>";
 
-      mockPreview = jest.fn(() =>
-        togglePreviewAttribute(getNodeListOfButtons())
-      );
+      mockPreview = jest.fn(() => togglePreviewAttribute(getNodeListOfButtons()));
       list_of_buttons = getNodeListOfButtons();
       event = ({ target: list_of_buttons[0] } as unknown) as PointerEvent;
       up_arrow = { keyCode: 40 };
@@ -53,24 +51,16 @@ describe("Utils", () => {
       });
       it(" add property data-preview to focused element", () => {
         list_of_buttons[1].focus();
-        expect(togglePreviewAttribute(list_of_buttons)).toEqual(
-          list_of_buttons[1].nextSibling
-        );
+        expect(togglePreviewAttribute(list_of_buttons)).toEqual(list_of_buttons[1].nextSibling);
       });
 
       it(" remove property data-preview from unfocused element", () => {
-        expect(list_of_buttons[3].nextSibling).toHaveAttribute(
-          "data-preview",
-          "true"
-        );
+        expect(list_of_buttons[3].nextSibling).toHaveAttribute("data-preview", "true");
 
         list_of_buttons[1].focus();
         togglePreviewAttribute(list_of_buttons);
 
-        expect(list_of_buttons[3].nextSibling).not.toHaveAttribute(
-          "data-preview",
-          "true"
-        );
+        expect(list_of_buttons[3].nextSibling).not.toHaveAttribute("data-preview", "true");
       });
     });
 
@@ -78,92 +68,48 @@ describe("Utils", () => {
       describe("Unit tests", () => {
         it(" not increment index if index === array.length", () => {
           const length = list_of_buttons.length;
-          expect(
-            updateActiveButtonOnKeyUp(
-              up_arrow,
-              list_of_buttons,
-              length,
-              mockPreview
-            )
-          ).toEqual(length);
+          expect(updateActiveButtonOnKeyUp(up_arrow, list_of_buttons, length, mockPreview)).toEqual(
+            length
+          );
         });
 
         it(" not increment index if index === array.length - 1", () => {
           const length = list_of_buttons.length;
           expect(
-            updateActiveButtonOnKeyUp(
-              up_arrow,
-              list_of_buttons,
-              length - 1,
-              mockPreview
-            )
+            updateActiveButtonOnKeyUp(up_arrow, list_of_buttons, length - 1, mockPreview)
           ).toEqual(length - 1);
         });
 
         it(" increment index if index < array.length - 1", () => {
           const length = list_of_buttons.length;
           expect(
-            updateActiveButtonOnKeyUp(
-              up_arrow,
-              list_of_buttons,
-              length - 1 - 1,
-              mockPreview
-            )
+            updateActiveButtonOnKeyUp(up_arrow, list_of_buttons, length - 1 - 1, mockPreview)
           ).toEqual(length - 1);
         });
 
         it(" not decrement index value if index === 0", () => {
-          expect(
-            updateActiveButtonOnKeyUp(
-              down_arrow,
-              list_of_buttons,
-              0,
-              mockPreview
-            )
-          ).toEqual(0);
+          expect(updateActiveButtonOnKeyUp(down_arrow, list_of_buttons, 0, mockPreview)).toEqual(0);
         });
 
         it(" decrement index if index > 0", () => {
-          expect(
-            updateActiveButtonOnKeyUp(
-              down_arrow,
-              list_of_buttons,
-              1,
-              mockPreview
-            )
-          ).toEqual(0);
+          expect(updateActiveButtonOnKeyUp(down_arrow, list_of_buttons, 1, mockPreview)).toEqual(0);
         });
       });
 
       describe("Integration tests", () => {
         it(" trigger togglePreviewAttribute()", () => {
-          updateActiveButtonOnKeyUp(
-            down_arrow,
-            list_of_buttons,
-            1,
-            mockPreview
-          );
+          updateActiveButtonOnKeyUp(down_arrow, list_of_buttons, 1, mockPreview);
 
           expect(mockPreview).toBeCalled();
           expect(mockPreview.mock.calls.length).toEqual(1);
 
-          updateActiveButtonOnKeyUp(
-            down_arrow,
-            list_of_buttons,
-            1,
-            mockPreview
-          );
+          updateActiveButtonOnKeyUp(down_arrow, list_of_buttons, 1, mockPreview);
           expect(mockPreview.mock.calls.length).toEqual(2);
         });
 
         it(" return immediately", () => {
           expect(
-            updateActiveButtonOnKeyUp(
-              { keyCode: 10 },
-              list_of_buttons,
-              1,
-              mockPreview
-            )
+            updateActiveButtonOnKeyUp({ keyCode: 10 }, list_of_buttons, 1, mockPreview)
           ).toEqual(1);
 
           expect(mockPreview).not.toBeCalled();
@@ -250,19 +196,13 @@ describe("Utils", () => {
       });
 
       it("returns initial value", () => {
-        expect(list_of_buttons[0].nextSibling).toHaveAttribute(
-          "data-preview",
-          "true"
-        );
+        expect(list_of_buttons[0].nextSibling).toHaveAttribute("data-preview", "true");
         expect(list_of_buttons[0]).toHaveFocus();
       });
 
       it("on keyUp return selected value", () => {
         fireEvent.keyUp(document, { keyCode: 40 });
-        expect(list_of_buttons[1].nextSibling).toHaveAttribute(
-          "data-preview",
-          "true"
-        );
+        expect(list_of_buttons[1].nextSibling).toHaveAttribute("data-preview", "true");
         expect(list_of_buttons[1]).toHaveFocus();
       });
 
@@ -270,10 +210,7 @@ describe("Utils", () => {
         fireEvent.pointerEnter(list_of_buttons[1], {
           target: list_of_buttons[1],
         });
-        expect(list_of_buttons[1].nextSibling).toHaveAttribute(
-          "data-preview",
-          "true"
-        );
+        expect(list_of_buttons[1].nextSibling).toHaveAttribute("data-preview", "true");
         expect(list_of_buttons[1]).toHaveFocus();
       });
 
