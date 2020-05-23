@@ -21,9 +21,7 @@ describe("Planets.tsx", () => {
       terrain: "Dessert",
       url: "https://swapi.dev/api/planets/1/",
     };
-    const component = renderer.create(
-      <Planets results={[results]} closeModal={jest.fn(() => {})} />
-    );
+    const component = renderer.create(<Planets results={[results]} />);
     expect(component.toJSON()).toMatchSnapshot();
   });
 });

@@ -1,6 +1,46 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
-export const globalWindow = styled.main`
+const shake = keyframes`
+    0% {
+      transform: translate(.1rem, .1rem) rotate(0deg);
+    }
+    10% {
+      transform: translate(-.1rem, -.2rem) rotate(-1deg);
+    }
+    20% {
+      transform: translate(-.3rem, 0rem) rotate(1deg);
+    }
+    30% {
+      transform: translate(.3rem, .2rem) rotate(0deg);
+    }
+    40% {
+      transform: translate(.1rem, -.1rem) rotate(1deg);
+    }
+    50% {
+      transform: translate(-.1rem, .2rem) rotate(-1deg);
+    }
+    60% {
+      transform: translate(-.3rem, .1rem) rotate(0deg);
+    }
+    70% {
+      transform: translate(.3rem, .1rem) rotate(-1deg);
+    }
+    80% {
+      transform: translate(-.1rem, -.1rem) rotate(1deg);
+    }
+    90% {
+      transform: translate(.1rem, .2rem) rotate(0deg);
+    }
+    100% {
+      transform: translate(.1rem, -.2rem) rotate(-1deg);
+    }
+`;
+
+interface IWindowProps {
+  readonly shake?: boolean;
+}
+
+export const globalWindow = styled.main<IWindowProps>`
   position: relative;
   width: 100vw;
   display: flex;
@@ -8,6 +48,11 @@ export const globalWindow = styled.main`
   align-items: center;
   justify-content: center;
   height: 100vh;
+  ${(props) =>
+    props.shake &&
+    css`
+      animation: ${shake} 1.25s;
+    `}
 `;
 
 export const globalList = styled.ul`

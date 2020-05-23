@@ -22,9 +22,7 @@ describe("Film.tsx", () => {
       url: "https://swapi.dev/api/films/1/",
       vehicles: ["https://swapi.dev/api/vehicles/4/"],
     };
-    const component = renderer.create(
-      <Films results={[results]} closeModal={jest.fn(() => {})} />
-    );
+    const component = renderer.create(<Films results={[results]} />);
     expect(component.toJSON()).toMatchSnapshot();
   });
 });

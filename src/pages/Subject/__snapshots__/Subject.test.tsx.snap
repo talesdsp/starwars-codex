@@ -3,18 +3,18 @@
 exports[`Subject.tsx take snapshot 1`] = `
 Array [
   <h1
-    className="sc-AxhCb cOZZlm"
+    className="sc-fzoLag aoduX"
   >
     people
   </h1>,
   <ul
-    className="sc-AxhUy fEmoMy"
+    className="sc-AxirZ sc-fzqBZW fYrObk"
   >
     <li
-      className="sc-AxgMl iUzuzw"
+      className="sc-AxiKw sc-fzplWN hGswWD"
     >
       <button
-        className="sc-AxheI jfMBhg"
+        className="sc-AxhCb sc-fznyAO hmAjLB"
       >
         <h1>
           people
@@ -22,10 +22,10 @@ Array [
         s
       </button>
       <div
-        className="sc-AxmLO dWmjtW"
+        className="sc-fznZeY dDFrgx"
       >
         <div
-          className="sc-Axmtr flHwwi"
+          className="sc-fznKkj iTpAqQ"
           onClick={[Function]}
         />
         <h1>
@@ -49,25 +49,25 @@ Array [
     </li>
   </ul>,
   <footer
-    className="sc-fzozJi bBjIJb"
+    className="sc-AxmLO fZfazS"
   >
     <button
-      className="sc-AxheI jfMBhg"
+      className="sc-AxhCb sc-Axmtr gFtPZS"
       onClick={[Function]}
     >
       Previous
     </button>
     <button
-      className="sc-AxheI jfMBhg"
+      className="sc-AxhCb sc-Axmtr gFtPZS"
       onClick={[Function]}
     >
       Next
     </button>
     <div
-      className="sc-fzoLsD wRDqf"
+      className="sc-fzozJi dshpyh"
     >
       <button
-        className="sc-AxheI fEbfFm"
+        className="sc-AxhCb sc-Axmtr fIjFPo"
         onClick={[Function]}
         tabIndex={0}
       >

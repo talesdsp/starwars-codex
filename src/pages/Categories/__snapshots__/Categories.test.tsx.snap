@@ -3,70 +3,70 @@
 exports[`Categories.tsx render component correctly 1`] = `
 <div>
   <main
-    class="sc-AxjAm daanbY"
+    class="sc-AxjAm sc-AxhUy LnXBH"
   >
     <ul
-      class="sc-AxhUy fEmoMy"
+      class="sc-AxirZ sc-AxgMl eIVynF"
     >
       <li
-        class="sc-AxgMl iUzuzw"
+        class="sc-AxiKw sc-AxheI bUcjaj"
       >
         <button
-          class="sc-AxheI jfMBhg"
+          class="sc-AxhCb sc-Axmtr gFtPZS"
         >
           Characters
         </button>
       </li>
       <li
-        class="sc-AxgMl iUzuzw"
+        class="sc-AxiKw sc-AxheI bUcjaj"
       >
         <button
-          class="sc-AxheI jfMBhg"
+          class="sc-AxhCb sc-Axmtr gFtPZS"
         >
           Planets
         </button>
       </li>
       <li
-        class="sc-AxgMl iUzuzw"
+        class="sc-AxiKw sc-AxheI bUcjaj"
       >
         <button
-          class="sc-AxheI jfMBhg"
+          class="sc-AxhCb sc-Axmtr gFtPZS"
         >
           Starships
         </button>
       </li>
       <li
-        class="sc-AxgMl iUzuzw"
+        class="sc-AxiKw sc-AxheI bUcjaj"
       >
         <button
-          class="sc-AxheI jfMBhg"
+          class="sc-AxhCb sc-Axmtr gFtPZS"
         >
           Vehicles
         </button>
       </li>
       <li
-        class="sc-AxgMl iUzuzw"
+        class="sc-AxiKw sc-AxheI bUcjaj"
       >
         <button
-          class="sc-AxheI jfMBhg"
+          class="sc-AxhCb sc-Axmtr gFtPZS"
         >
           Films
         </button>
       </li>
       <li
-        class="sc-AxgMl iUzuzw"
+        class="sc-AxiKw sc-AxheI bUcjaj"
       >
         <button
-          class="sc-AxheI jfMBhg"
+          class="sc-AxhCb sc-Axmtr gFtPZS"
         >
           Species
         </button>
       </li>
       <li
-        class="sc-AxgMl iUzuzw"
+        class="sc-AxiKw sc-AxheI bUcjaj"
       >
         <button
-          class="sc-AxheI fOcLmV"
+          class="sc-AxhCb sc-Axmtr gyNiSL"
         >
           Go Back
         </button>

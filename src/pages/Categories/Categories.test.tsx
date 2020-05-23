@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom";
 import { fireEvent, render, screen } from "@testing-library/react";
 import * as React from "react";
-import Categories from "./index";
+import Categories from "./Categories";
 
 const use_effect = jest.spyOn(React, "useEffect");
 

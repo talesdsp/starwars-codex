@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom";
 import { fireEvent, render, screen } from "@testing-library/react";
 import * as React from "react";
-import Home, { start } from "./index";
+import Home, { start } from "./Home";
 
 const stateSetter = jest.fn();
 

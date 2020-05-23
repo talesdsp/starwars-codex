@@ -1,9 +1,12 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import "../../setupTest";
-import { Button, Window } from "./index";
+import "../setupTest";
+import { globalButton, globalWindow } from "./index";
 
-describe("Window", () => {
+const Button = globalButton;
+const Window = globalWindow;
+
+describe("globalWindow", () => {
   it("have animation", () => {
     expect(renderer.create(<Window shake />).toJSON()).toMatchSnapshot();
   });
@@ -12,7 +15,7 @@ describe("Window", () => {
   });
 });
 
-describe("Button", () => {
+describe("globalButton", () => {
   it("render default style rules", () => {
     expect(renderer.create(<Button />).toJSON()).toMatchSnapshot();
   });

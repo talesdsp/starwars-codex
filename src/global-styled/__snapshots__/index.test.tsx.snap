@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button enable off button styling 1`] = `
+exports[`globalButton enable off button styling 1`] = `
 .c0 {
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -49,7 +49,7 @@ exports[`Button enable off button styling 1`] = `
 />
 `;
 
-exports[`Button enable pagination styling 1`] = `
+exports[`globalButton enable pagination styling 1`] = `
 .c0 {
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -102,7 +102,7 @@ exports[`Button enable pagination styling 1`] = `
 />
 `;
 
-exports[`Button render default style rules 1`] = `
+exports[`globalButton render default style rules 1`] = `
 .c0 {
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -150,7 +150,7 @@ exports[`Button render default style rules 1`] = `
 />
 `;
 
-exports[`Window have NO animation 1`] = `
+exports[`globalWindow have NO animation 1`] = `
 .c0 {
   position: relative;
   width: 100vw;
@@ -177,7 +177,7 @@ exports[`Window have NO animation 1`] = `
 />
 `;
 
-exports[`Window have animation 1`] = `
+exports[`globalWindow have animation 1`] = `
 .c0 {
   position: relative;
   width: 100vw;
