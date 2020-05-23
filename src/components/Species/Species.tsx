@@ -1,8 +1,9 @@
 import React from "react";
 import * as S from "../../styles/styled";
 import { Specie } from "../types";
+import { closeModal } from "../utils";
 
-const Species: Specie = ({ results, closeModal }) => {
+const Species: Specie = ({ results }) => {
   return (
     <>
       {results.map((v, i) => (

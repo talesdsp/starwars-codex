@@ -16,7 +16,7 @@ exports[`Starships.tsx render Starships component with correct data 1`] = `
   >
     <div
       className="sc-Axmtr flHwwi"
-      onClick={[MockFunction]}
+      onClick={[Function]}
     />
     <h1>
       Sand Crawler

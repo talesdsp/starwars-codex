@@ -1,8 +1,9 @@
 import React from "react";
 import * as S from "../../styles/styled";
 import { Vehicle } from "../types";
+import { closeModal } from "../utils";
 
-const Vehicles: Vehicle = ({ results, closeModal }) => {
+const Vehicles: Vehicle = ({ results }) => {
   return (
     <>
       {results.map((v, i) => (

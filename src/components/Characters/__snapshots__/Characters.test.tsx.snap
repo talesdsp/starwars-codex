@@ -17,7 +17,7 @@ exports[`Character.tsx render Character component with correct data 1`] = `
   >
     <div
       className="sc-Axmtr flHwwi"
-      onClick={[MockFunction]}
+      onClick={[Function]}
     />
     <h1>
       Luke Skywalker
