@@ -1,6 +1,11 @@
-import { call, put } from "redux-saga/effects";
-import { swapi } from "../../../services/api";
+import { call, put, takeLatest } from "redux-saga/effects";
+import { swapi } from "../../services/api";
 import { failedRequest, setData } from "./actions";
+import { CodexTypes } from "./types";
+
+export function codexWatcher() {
+  return takeLatest(CodexTypes.ASYNC_GET_DATA, getData);
+}
 
 interface Action {
   type: string;

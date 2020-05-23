@@ -1,0 +1,154 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`index.tsx renders without crashing  1`] = `
+Array [
+  <audio
+    id="theme"
+    loop={true}
+  >
+    <source
+      id="ogg"
+      src="starwars.ogg"
+      type="audio/ogg"
+    />
+    <source
+      id="mp3"
+      src="starwars.mp3"
+      type="audio/mpeg"
+    />
+  </audio>,
+  <audio
+    id="lightsaberSound"
+  >
+    <source
+      id="ogg"
+      src="lightsaber.ogg"
+      type="audio/ogg"
+    />
+    <source
+      id="mp3"
+      src="lightsaber.mp3"
+      type="audio/mpeg"
+    />
+  </audio>,
+  <video
+    id="lightsaberVideo"
+  >
+    <source
+      src="lightning.mp4"
+      type="video/mp4; codecs=\\"avc1.42E01E, mp4a.40.2\\""
+    />
+  </video>,
+  <div
+    className="sc-AxhUy fTiWoS layer1"
+  />,
+  <div
+    className="sc-AxhUy fTiWoS layer1 a"
+  />,
+  <div
+    className="sc-AxhUy fTiWoS layer2"
+  />,
+  <div
+    className="sc-AxhUy fTiWoS layer2 a"
+  />,
+  <div
+    className="sc-AxhUy fTiWoS layer3"
+  />,
+  <div
+    className="sc-AxhUy fTiWoS layer3 a"
+  />,
+  <main
+    className="sc-AxgMl sc-fznyAO jowjTH"
+  >
+    <img
+      alt="Star Wars"
+      className="sc-fzqNJr kAiDBy"
+      src="logo.svg"
+    />
+    <div
+      className="sc-fzqBZW hymcIh"
+    >
+      <button
+        className="sc-AxmLO sc-fzokOt fzGgUX"
+        onClick={[Function]}
+      >
+        Start
+      </button>
+    </div>
+  </main>,
+  <div
+    className="sc-AxjAm iWNzyN"
+  >
+    <div
+      className="sc-AxirZ hatWLT"
+    >
+      <div
+        className="sc-AxiKw imGYnc"
+      >
+        <div
+          className="sc-AxhCb hWGxmf"
+        >
+          <img
+            alt="up-arrow"
+            src={
+              Object {
+                "ReactComponent": Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "render": [Function],
+                },
+                "__esModule": true,
+                "default": "up-arrow.svg",
+              }
+            }
+          />
+        </div>
+        - Up
+      </div>
+      <div
+        className="sc-AxiKw imGYnc"
+      >
+        <div
+          className="sc-AxhCb hWGxmf"
+        >
+          <img
+            alt="down-arrow"
+            src={
+              Object {
+                "ReactComponent": Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "render": [Function],
+                },
+                "__esModule": true,
+                "default": "down-arrow.svg",
+              }
+            }
+          />
+        </div>
+        - Down
+      </div>
+      <div
+        className="sc-AxiKw imGYnc"
+      >
+        <div
+          className="sc-AxhCb hWGxmf"
+        >
+          <img
+            alt="enter-key"
+            src={
+              Object {
+                "ReactComponent": Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "render": [Function],
+                },
+                "__esModule": true,
+                "default": "enter.svg",
+              }
+            }
+          />
+        </div>
+        - Confirm
+      </div>
+    </div>
+  </div>,
+]
+`;
