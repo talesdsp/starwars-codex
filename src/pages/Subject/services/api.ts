@@ -1,4 +1,4 @@
-import { Codex } from "../redux/ducks/codex/types";
+import { Codex } from "../store/codex/types";
 
 const API_URL = "https://swapi.dev/api";
 

@@ -1,9 +1,9 @@
 /* eslint-disable no-undef */
 import { applyMiddleware, compose, createStore, Store } from "redux";
 import createSaga from "redux-saga";
-import { CodexState } from "./ducks/codex/types";
-import combinedReducers from "./ducks/rootReducer";
-import sagas from "./ducks/rootSaga";
+import { CodexState } from "./codex/types";
+import combinedReducers from "./rootReducer";
+import sagas from "./rootSaga";
 
 export interface ApplicationState {
   codex: CodexState;

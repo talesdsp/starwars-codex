@@ -1,33 +1,8 @@
-import { mount } from "enzyme";
-import React from "react";
-import { Provider } from "react-redux";
-import configureStore from "redux-mock-store";
+//@ts-nocheck
 import { MulticastChannel, runSaga, RunSagaOptions, stdChannel } from "redux-saga";
-import App from "../../App";
-import "../../setupTest";
 import { failedRequest, getAsyncData, setData } from "./codex/actions";
 import { getData } from "./codex/sagas";
 import rootSaga from "./rootSaga";
-
-describe("Provide app", () => {
-  const mockStore = configureStore();
-
-  let wrapper: any;
-
-  const props: any = {
-    handleSubmit: jest.fn(),
-  };
-
-  it("Defines the component", () => {
-    wrapper = mount(
-      <Provider store={mockStore()}>
-        <App {...props} />
-      </Provider>
-    );
-
-    expect(wrapper).toBeDefined();
-  });
-});
 
 declare let global: { fetch: jest.Mock<any, any> };
 

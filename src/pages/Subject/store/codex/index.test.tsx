@@ -1,12 +1,11 @@
 import { testSaga } from "redux-saga-test-plan";
-import { swapi } from "../../../services/api";
-import "../../../setupTest";
+import { swapi } from "../../services/api";
 import { failedRequest, setData, triggerLoading } from "./actions";
 import { codexReducer, initialState } from "./index";
 import { getData } from "./sagas";
 import { Codex } from "./types";
 
-const data: Codex = { count: 1, next: "qwe", previous: "12e", results: [{}] };
+const data: Codex = { count: 1, next: "next url", previous: "previous url", results: [{}] };
 
 const set_data = {
   count: 87,

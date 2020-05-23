@@ -1,8 +1,10 @@
 import React from "react";
+import { Provider } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { audio, video } from "./assets";
 import { Footer, Stars } from "./components/";
 import { Categories, Home, Subject } from "./pages/index";
+import store from "./pages/Subject/store";
 
 const App: React.FC = () => {
   React.useEffect(() => {
@@ -32,7 +34,9 @@ const App: React.FC = () => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/categories" component={Categories} />
-        <Route exact path="/categories/:theme" component={Subject} />
+        <Provider store={store}>
+          <Route exact path="/categories/:theme" component={Subject} />
+        </Provider>
       </Switch>
 
       <Footer />
