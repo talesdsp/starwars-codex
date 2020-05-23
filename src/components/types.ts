@@ -1,7 +1,3 @@
-interface ModalProps {
-  closeModal: React.MouseEventHandler;
-}
-
 export type Character = React.FC<Subject<ICharacters>>;
 export type Starship = React.FC<Subject<IStarships>>;
 export type Planet = React.FC<Subject<IPlanets>>;
@@ -9,7 +5,7 @@ export type Specie = React.FC<Subject<ISpecies>>;
 export type Film = React.FC<Subject<IFilms>>;
 export type Vehicle = React.FC<Subject<IVehicles>>;
 
-interface Subject<T> extends ModalProps {
+interface Subject<T> {
   results: T[];
 }
 
