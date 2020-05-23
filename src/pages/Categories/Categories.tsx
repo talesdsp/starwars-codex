@@ -1,11 +1,10 @@
 import React, { useEffect } from "react";
 import { RouteComponentProps } from "react-router-dom";
 import { waitButtons } from "../../utils/navigation";
+import { URL } from "../types";
 import { Button, Item, List, Window } from "./styled";
 
 const Categories: React.FC<RouteComponentProps> = ({ history }) => {
-  type URL = "people" | "planets" | "starships" | "vehicles" | "films" | "species";
-
   useEffect(() => {
     waitButtons();
   }, []);

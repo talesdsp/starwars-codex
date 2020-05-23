@@ -1,6 +1,80 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Subject.tsx take snapshot 1`] = `
+exports[`Subject.tsx snapshots render with Spinner 1`] = `
+Array [
+  <h1
+    className="sc-fzoLag aoduX"
+  >
+    people
+  </h1>,
+  <div
+    className="sc-fzoXzr gjwfCR"
+  />,
+  <ul
+    className="sc-AxirZ sc-fzqBZW fYrObk"
+  >
+    <li
+      className="sc-AxiKw sc-fzplWN hGswWD"
+    >
+      <button
+        className="sc-AxhCb sc-fznyAO hmAjLB"
+      >
+        <h1 />
+        s
+      </button>
+      <div
+        className="sc-fznZeY dDFrgx"
+      >
+        <div
+          className="sc-fznKkj iTpAqQ"
+          onClick={[Function]}
+        />
+        <h1 />
+        <p>
+          gender: 
+        </p>
+        <p>
+          weight: 
+          kg
+        </p>
+        <p>
+          height: 
+          cm
+        </p>
+      </div>
+    </li>
+  </ul>,
+  <footer
+    className="sc-AxmLO fZfazS"
+  >
+    <button
+      className="sc-AxhCb sc-Axmtr gyNiSL"
+      onClick={[Function]}
+    >
+      Go Back
+    </button>
+    <button
+      className="sc-AxhCb sc-Axmtr gyNiSL"
+      onClick={[Function]}
+    >
+      Next
+    </button>
+    <div
+      className="sc-fzozJi dshpyh"
+    >
+      <button
+        className="sc-AxhCb sc-Axmtr fIjFPo"
+        onClick={[Function]}
+        tabIndex={0}
+      >
+        1
+      </button>
+    </div>
+  </footer>,
+]
+`;
+
+exports[`Subject.tsx snapshots render with data 1`] = `
 Array [
   <h1
     className="sc-fzoLag aoduX"
@@ -17,7 +91,7 @@ Array [
         className="sc-AxhCb sc-fznyAO hmAjLB"
       >
         <h1>
-          people
+          Obi-Wan Kenobi
         </h1>
         s
       </button>
@@ -29,7 +103,7 @@ Array [
           onClick={[Function]}
         />
         <h1>
-          people
+          Obi-Wan Kenobi
         </h1>
         <p>
           gender: 
@@ -37,12 +111,12 @@ Array [
         </p>
         <p>
           weight: 
-          12
+          77
           kg
         </p>
         <p>
           height: 
-          12
+          182
           cm
         </p>
       </div>
