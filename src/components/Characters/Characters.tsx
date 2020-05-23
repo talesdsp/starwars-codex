@@ -1,8 +1,9 @@
 import React from "react";
 import * as S from "../../styles/styled";
 import { Character } from "../types";
+import { closeModal } from "../utils";
 
-const Characters: Character = ({ results, closeModal }) => {
+const Characters: Character = ({ results }) => {
   return (
     <>
       {results.map((v, i) => (

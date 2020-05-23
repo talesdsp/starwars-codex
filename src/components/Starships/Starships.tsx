@@ -1,8 +1,9 @@
 import React from "react";
 import * as S from "../../styles/styled";
 import { Starship } from "../types";
+import { closeModal } from "../utils";
 
-const Starships: Starship = ({ results, closeModal }) => {
+const Starships: Starship = ({ results }) => {
   return (
     <>
       {results.map((v, i) => (
