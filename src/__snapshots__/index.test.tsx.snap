@@ -57,34 +57,9 @@ Array [
   <div
     className="sc-AxhUy fTiWoS layer3 a"
   />,
-  <main
-    className="sc-AxgMl sc-fznyAO jowjTH"
-  >
-    <img
-      alt="Star Wars"
-      className="sc-fzqNJr kAiDBy"
-      src={
-        Object {
-          "ReactComponent": Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "render": [Function],
-          },
-          "__esModule": true,
-          "default": "star-logo.svg",
-        }
-      }
-    />
-    <div
-      className="sc-fzqBZW hymcIh"
-    >
-      <button
-        className="sc-AxmLO sc-fzokOt fzGgUX"
-        onClick={[Function]}
-      >
-        Start
-      </button>
-    </div>
-  </main>,
+  <div
+    className="sc-fznKkj bubfUO"
+  />,
   <div
     className="sc-AxjAm iWNzyN"
   >
