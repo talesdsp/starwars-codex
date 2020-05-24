@@ -1,16 +1,18 @@
 import { Codex } from "../store/codex/types";
 
-const API_URL = "https://swapi.dev/api";
+export const API_URL = "https://swapi.dev/api";
+export const queryRGX = /\?page=\d+/g;
 
-async function swapi(path?: string): Promise<Codex | undefined> {
+export async function swapi(path?: string): Promise<Codex | undefined> {
   if (!path) return;
 
-  const response = await fetch(`${API_URL}/${path}`);
+  const response = await fetch(`${API_URL}/${queryRGX.test(path) ? path : path + "/"}`);
+
   const result = await response.json();
   return result;
 }
 
-const extractPathFromUrl = (url: string) => {
+export const extractPathFromUrl = (url: string) => {
   const rgx = /(https?:\/\/\w+\.\w+\/api\/)/g;
   let extractedPath = url;
   if (rgx.test(url)) {
@@ -18,5 +20,3 @@ const extractPathFromUrl = (url: string) => {
   }
   return extractedPath;
 };
-
-export { swapi, extractPathFromUrl, API_URL };

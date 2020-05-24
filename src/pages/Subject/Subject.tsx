@@ -12,7 +12,7 @@ export const selector = (state: ApplicationState) => state.codex;
 
 const Subject: React.FC<RouteComponentProps<SParams>> = ({ match }) => {
   const {
-    data: { results, count },
+    data: { results },
     isLoading,
   } = useSelector(selector);
   const dispatch = useDispatch();
@@ -51,7 +51,7 @@ const Subject: React.FC<RouteComponentProps<SParams>> = ({ match }) => {
 
       <List>{results && Which()}</List>
 
-      {count && <Buttons theme={theme} />}
+      <Buttons theme={theme} />
     </>
   );
 };
