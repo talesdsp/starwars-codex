@@ -9,7 +9,7 @@ const Characters: Character = ({ results }) => {
       {results.map((v, i) => (
         <Item key={i}>
           <Button>
-            <h1>{v.name}</h1>s
+            <h1>{v.name}</h1>
           </Button>
           <Modal>
             <X onClick={closeModal} />
