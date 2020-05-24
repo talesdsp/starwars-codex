@@ -17,7 +17,7 @@ const Films: Film = ({ results }) => {
             <p>episode: {v.episode_id}</p>
             <p>director: {v.director}</p>
             <p>producer: {v.producer}</p>
-            <p>opening crawl: {v.opening_crawl.substring(0, 100)}...</p>
+            <p>opening crawl: {v.opening_crawl?.substring(0, 100)}...</p>
           </Modal>
         </Item>
       ))}
