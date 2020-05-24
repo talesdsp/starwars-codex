@@ -17,6 +17,6 @@ export function* getData(action: Action) {
     const jsonResponse = yield call(swapi, action.payload.urlPath);
     yield put(setData(jsonResponse));
   } catch (e) {
-    yield put(failedRequest());
+    yield put(failedRequest(e));
   }
 }

@@ -1,50 +1,11 @@
+import { runSaga } from "redux-saga";
 import { testSaga } from "redux-saga-test-plan";
 import { swapi } from "../../services/api";
-import { failedRequest, setData, triggerLoading } from "./actions";
+import { dispatchedActions, fakeStore, fetchedData, mockGlobal } from "../../__fixtures";
+import { failedRequest, getAsyncData, setData, triggerLoading } from "./actions";
 import { codexReducer, initialState } from "./index";
 import { getData } from "./sagas";
-import { Codex } from "./types";
 
-const data: Codex = { count: 1, next: "next url", previous: "previous url", results: [{}] };
-
-const set_data = {
-  count: 87,
-  next: "https://swapi.dev/api/people/",
-  previous: null,
-  results: [
-    {
-      name: "Obi-Wan Kenobi",
-      height: "182",
-      mass: "77",
-      hair_color: "auburn, white",
-      skin_color: "fair",
-      eye_color: "blue-gray",
-      birth_year: "57BBY",
-      gender: "male",
-      homeworld: "https://swapi.dev/api/planets/20/",
-      films: [
-        "https://swapi.dev/api/films/2/",
-        "https://swapi.dev/api/films/5/",
-        "https://swapi.dev/api/films/4/",
-        "https://swapi.dev/api/films/6/",
-        "https://swapi.dev/api/films/3/",
-        "https://swapi.dev/api/films/1/",
-      ],
-      species: ["https://swapi.dev/api/species/1/"],
-      vehicles: ["https://swapi.dev/api/vehicles/38/"],
-      starships: [
-        "https://swapi.dev/api/starships/48/",
-        "https://swapi.dev/api/starships/59/",
-        "https://swapi.dev/api/starships/64/",
-        "https://swapi.dev/api/starships/65/",
-        "https://swapi.dev/api/starships/74/",
-      ],
-      created: "2014-12-10T16:16:29.192000Z",
-      edited: "2014-12-20T21:17:50.325000Z",
-      url: "https://swapi.dev/api/people/10/",
-    },
-  ],
-};
 const action = { type: "123", payload: { urlPath: "test" } };
 
 describe("Codex reducer", () => {
@@ -70,7 +31,7 @@ describe("Codex reducer", () => {
   test("Case SET_DATA return input data and isLoading as falsy", () => {
     let state;
     // @ts-ignore
-    state = codexReducer(initialState, setData(set_data));
+    state = codexReducer(initialState, setData(fetchedData));
     expect(state).toEqual({
       data: state.data,
       isLoading: false,
@@ -78,24 +39,59 @@ describe("Codex reducer", () => {
   });
 });
 
-it("works with unit tests", () => {
-  testSaga(getData, action)
-    .next()
-    .call(swapi, action.payload.urlPath)
-    .next(data)
-    // test it puts correctly
-    .put(setData(data))
-    .next()
-    // assert that the saga is finished
-    .isDone();
-});
+describe("getData()*", () => {
+  describe("assert logic", () => {
+    it("fetch data, update reducer, finish", () => {
+      testSaga(getData, action)
+        .next()
+        .call(swapi, action.payload.urlPath)
+        .next(fetchedData)
+        // test it puts correctly
+        .put(setData(fetchedData))
+        .next()
+        // assert that the saga is finished
+        .isDone();
+    });
 
-it("trigger catch error", () => {
-  testSaga(getData, action)
-    .next()
-    .call(swapi, action.payload.urlPath)
-    .throw(new Error())
-    .put(failedRequest())
-    .next()
-    .isDone();
+    it("fail request, trigger catch error, finish", () => {
+      testSaga(getData, action)
+        .next()
+        .call(swapi, action.payload.urlPath)
+        .throw(new Error())
+        .put(failedRequest(new Error()))
+        .next()
+        .isDone();
+    });
+  });
+
+  describe("assert proper execution", () => {
+    afterEach(() => {
+      mockGlobal.fetch.mockClear();
+    });
+    it("catch error for undefined payload", () => {
+      // @ts-ignore
+      runSaga(fakeStore, getData);
+
+      expect(mockGlobal.fetch.mock.calls.length).toEqual(0);
+      expect(dispatchedActions[0]).toEqual(
+        failedRequest(new TypeError("Cannot read property 'payload' of undefined"))
+      );
+    });
+
+    it("catch error for undefined path", () => {
+      // @ts-ignore
+      runSaga(fakeStore, getData, getAsyncData);
+
+      expect(mockGlobal.fetch.mock.calls.length).toEqual(0);
+      expect(dispatchedActions[1]).toEqual(
+        failedRequest(new TypeError("Cannot read property 'urlPath' of undefined"))
+      );
+    });
+
+    it("executes getData correctly", async () => {
+      await runSaga(fakeStore, getData, getAsyncData("test")).toPromise();
+      expect(mockGlobal.fetch.mock.calls.length).toEqual(1);
+      expect(dispatchedActions[2]).toEqual(setData(fetchedData));
+    });
+  });
 });
