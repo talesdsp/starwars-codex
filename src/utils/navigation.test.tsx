@@ -125,7 +125,8 @@ describe("Utils", () => {
               ({ target: list_of_buttons[0] } as unknown) as PointerEvent,
               list_of_buttons,
               0,
-              mockPreview
+              mockPreview,
+              0
             )
           ).toEqual(0);
         });

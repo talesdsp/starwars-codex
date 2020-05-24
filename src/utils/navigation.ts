@@ -47,7 +47,7 @@ export const updateActiveButtonOnPoint = (
   i?: number
 ) => {
   (ev.target as HTMLElement).focus();
-  if (!i) return index;
+  if (i === undefined) return index;
 
   index = i;
 
@@ -81,7 +81,7 @@ export const initNavigation = (btn: NodeListOf<HTMLButtonElement>, index: number
     });
 
     a.addEventListener("pointerleave", (ev) => {
-      index = updateActiveButtonOnPoint(ev, btn, index, togglePreviewAttribute);
+      index = updateActiveButtonOnPoint(ev, btn, index, togglePreviewAttribute, i);
     });
   });
 };
