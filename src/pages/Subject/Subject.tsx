@@ -20,10 +20,15 @@ const Subject: React.FC<RouteComponentProps<SParams>> = ({ match }) => {
   const theme = match.params.theme;
 
   useEffect(() => {
-    waitButtons();
     dispatch(triggerLoading());
     dispatch(getAsyncData(theme));
   }, [dispatch, theme]);
+
+  const rerender = results[0];
+
+  useEffect(() => {
+    waitButtons();
+  }, [rerender]);
 
   const Which = () => {
     const selectedComponent: SelectComponent = {

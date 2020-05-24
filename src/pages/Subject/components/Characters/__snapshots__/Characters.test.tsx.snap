@@ -10,7 +10,6 @@ exports[`Character.tsx render Character component with correct data 1`] = `
     <h1>
       Luke Skywalker
     </h1>
-    s
   </button>
   <div
     className="sc-fzozJi jkmZKH"
