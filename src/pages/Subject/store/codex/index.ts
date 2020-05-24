@@ -6,9 +6,9 @@ export const initialState: CodexState = {
     count: 0,
     previous: null,
     next: null,
-    results: [],
+    results: [{}, {}, {}, {}, {}],
   },
-  isLoading: false,
+  isLoading: true,
 };
 
 export const codexReducer: Reducer<CodexState, CodexAction> = (state = initialState, action) => {
@@ -20,8 +20,8 @@ export const codexReducer: Reducer<CodexState, CodexAction> = (state = initialSt
         isLoading: false,
       };
     case CodexTypes.IS_LOADING:
-      return { ...state, isLoading: true };
+      return initialState;
     default:
-      return state;
+      return initialState;
   }
 };

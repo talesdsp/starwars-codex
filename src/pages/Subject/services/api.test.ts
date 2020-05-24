@@ -20,9 +20,14 @@ describe("estractPathFromUrl", () => {
 });
 
 describe("swapi()", () => {
-  it("return data from call", async () => {
+  it("return data from url param", async () => {
     const result = await swapi("param");
-    expect(result).toEqual(API_URL + "/param");
+    expect(result).toEqual(API_URL + "/param/");
+  });
+
+  it("return data from url query", async () => {
+    const result = await swapi("?page=2");
+    expect(result).toEqual(API_URL + "/?page=2");
   });
 
   it("return undefined if no param passed", async () => {
