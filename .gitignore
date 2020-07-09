@@ -68,6 +68,7 @@ typings/
 
 # testing
 /coverage
+cypress
 
 # production
 /build
