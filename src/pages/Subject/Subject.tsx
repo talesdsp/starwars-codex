@@ -35,6 +35,7 @@ const Subject: React.FC<RouteComponentProps<SParams>> = ({ match }) => {
       starships: <Starships results={results} />,
       species: <Species results={results} />,
       films: <Films results={results} />,
+
     }
 
     return selectedComponent[theme]
@@ -53,3 +54,4 @@ const Subject: React.FC<RouteComponentProps<SParams>> = ({ match }) => {
   )
 }
 export default Subject
+

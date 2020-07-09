@@ -27,7 +27,7 @@ const Buttons: React.FC<ButtonProps> = ({ theme }) => {
     dispatch(triggerLoading())
     dispatch(getAsyncData(extractPathFromUrl(url)))
   }
-
+  
   return (
     <Controls>
       <Button off={previous === null} onClick={() => goto(previous, "back")}>
