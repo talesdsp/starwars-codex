@@ -21,7 +21,7 @@
     "test:coverage": "react-scripts test --coverage --watchAll=false",
     "test:coveralls": "react-scripts test --coverage --watchAll=false && coveralls < coverage/lcov.info",
     "eject": "react-scripts eject",
-    "cypress:open": "node_modules/cypress/bin/cypress open"
+    "cypress:open": "node_modules/.bin/cypress open"
   },
   "eslintConfig": {
     "extends": "react-app"
