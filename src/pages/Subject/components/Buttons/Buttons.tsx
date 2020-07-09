@@ -1,31 +1,32 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
-import { extractPathFromUrl } from "../../services/api";
-import { ApplicationState } from "../../store";
-import { getAsyncData, triggerLoading } from "../../store/codex/actions";
-import { Button, Controls, Page } from "./styled";
+import React from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { useHistory } from "react-router-dom"
+import { extractPathFromUrl } from "../../services/api"
+import { ApplicationState } from "../../store"
+import { getAsyncData, triggerLoading } from "../../store/codex/actions"
+import { Button, Controls, Page } from "./styled"
 
 interface ButtonProps {
-  theme: string;
+  theme: string
 }
 
-export const selector = (state: ApplicationState) => state.codex.data;
+export const selector = (state: ApplicationState) => state.codex.data
 
 const Buttons: React.FC<ButtonProps> = ({ theme }) => {
-  const { count, next, previous } = useSelector(selector);
+  const { count, next, previous } = useSelector(selector)
 
-  const history = useHistory();
-  const dispatch = useDispatch();
+  const history = useHistory()
+  const dispatch = useDispatch()
 
   const goto = (url: string | null, back?: string) => {
     if (!url) {
-      if (back) history.goBack();
-      return;
+      if (back) history.goBack()
+      return
     }
-    dispatch(triggerLoading());
-    dispatch(getAsyncData(extractPathFromUrl(url)));
-  };
+
+    dispatch(triggerLoading())
+    dispatch(getAsyncData(extractPathFromUrl(url)))
+  }
 
   return (
     <Controls>
@@ -42,9 +43,9 @@ const Buttons: React.FC<ButtonProps> = ({ theme }) => {
           <Button
             paginate
             tabIndex={0}
-            key={i + 100}
+            key={i}
             onClick={(e) => {
-              goto(`https://swapi.co/api/${theme}/?page=${i + 1}`);
+              goto(`https://swapi.dev/api/${theme}/?page=${i + 1}`)
             }}
           >
             {i + 1}
@@ -52,7 +53,7 @@ const Buttons: React.FC<ButtonProps> = ({ theme }) => {
         ))}
       </Page>
     </Controls>
-  );
-};
+  )
+}
 
-export default Buttons;
+export default Buttons

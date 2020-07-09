@@ -1,34 +1,31 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { RouteComponentProps } from "react-router-dom";
-import { waitButtons } from "../../utils";
-import { SelectComponent, SParams } from "../types";
-import { Buttons, Characters, Films, Planets, Species, Starships, Vehicles } from "./components";
-import { ApplicationState } from "./store";
-import { getAsyncData, triggerLoading } from "./store/codex/actions";
-import { List, Role, Spinner } from "./styled";
+import React, { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { RouteComponentProps } from "react-router-dom"
+import { waitButtons } from "../../utils"
+import { SelectComponent, SParams } from "../types"
+import { Buttons, Characters, Films, Planets, Species, Starships, Vehicles } from "./components"
+import { ApplicationState } from "./store"
+import { getAsyncData, triggerLoading } from "./store/codex/actions"
+import { List, Role, Spinner } from "./styled"
 
-export const selector = (state: ApplicationState) => state.codex;
+export const selector = (state: ApplicationState) => state.codex
 
 const Subject: React.FC<RouteComponentProps<SParams>> = ({ match }) => {
   const {
     data: { results },
     isLoading,
-  } = useSelector(selector);
-  const dispatch = useDispatch();
+  } = useSelector(selector)
+  const dispatch = useDispatch()
 
-  const theme = match.params.theme;
+  const theme = match.params.theme
+  useEffect(() => {
+    waitButtons()
+  }, [results])
 
   useEffect(() => {
-    dispatch(triggerLoading());
-    dispatch(getAsyncData(theme));
-  }, [dispatch, theme]);
-
-  const rerender = results[0];
-
-  useEffect(() => {
-    waitButtons();
-  }, [rerender]);
+    dispatch(triggerLoading())
+    dispatch(getAsyncData(theme))
+  }, [dispatch, theme])
 
   const Which = () => {
     const selectedComponent: SelectComponent = {
@@ -38,10 +35,10 @@ const Subject: React.FC<RouteComponentProps<SParams>> = ({ match }) => {
       starships: <Starships results={results} />,
       species: <Species results={results} />,
       films: <Films results={results} />,
-    };
+    }
 
-    return selectedComponent[theme];
-  };
+    return selectedComponent[theme]
+  }
 
   return (
     <>
@@ -53,6 +50,6 @@ const Subject: React.FC<RouteComponentProps<SParams>> = ({ match }) => {
 
       <Buttons theme={theme} />
     </>
-  );
-};
-export default Subject;
+  )
+}
+export default Subject
