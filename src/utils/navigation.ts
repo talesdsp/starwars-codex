@@ -104,7 +104,7 @@ export const initNavigation = (
   })
 }
 
-export const waitButtons = (): number | undefined => {
+export const waitButtons = (): NodeJS.Timeout | undefined => {
   const btn = getNodeListOfButtons()
   const index = 0
 
