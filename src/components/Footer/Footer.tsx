@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { svg } from "../../assets";
+import React from "react"
+import styled from "styled-components"
+import { svg } from "../../assets"
 
 const Footer: React.FC = () => {
   return (
@@ -28,10 +28,10 @@ const Footer: React.FC = () => {
         </TutorialItem>
       </TutorialItems>
     </TutorialBar>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
 
 const TutorialBar = styled.div`
   display: none;
@@ -45,7 +45,7 @@ const TutorialBar = styled.div`
     align-items: center;
     height: 7rem;
   }
-`;
+`
 const TutorialItems = styled.div`
   @media (min-width: 768px) {
     display: flex;
@@ -58,7 +58,7 @@ const TutorialItems = styled.div`
     top: 0;
     bottom: 0;
   }
-`;
+`
 
 const TutorialItem = styled.div`
   flex: 1;
@@ -68,10 +68,10 @@ const TutorialItem = styled.div`
   justify-content: center;
   color: #ccc;
   font-size: 1.2rem;
-`;
+`
 
 interface IKeyProps {
-  readonly space?: boolean;
+  readonly space?: boolean
 }
 
 export const TutorialKey = styled.div<IKeyProps>`
@@ -83,4 +83,4 @@ export const TutorialKey = styled.div<IKeyProps>`
   img {
     width: 100%;
   }
-`;
+`

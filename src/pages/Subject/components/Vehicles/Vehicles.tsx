@@ -1,7 +1,7 @@
-import React from "react";
-import { Button, Item, Modal, X } from "../styled";
-import { Vehicle } from "../types";
-import { closeModal } from "../utils";
+import React from "react"
+import { Button, Item, Modal, X } from "../styled"
+import { Vehicle } from "../types"
+import { closeModal } from "../utils"
 
 const Vehicles: Vehicle = ({ results }) => {
   return (
@@ -23,7 +23,7 @@ const Vehicles: Vehicle = ({ results }) => {
         </Item>
       ))}
     </>
-  );
-};
+  )
+}
 
-export default Vehicles;
+export default Vehicles

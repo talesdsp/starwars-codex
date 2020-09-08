@@ -14,10 +14,10 @@ export enum CodexTypes {
  */
 
 export interface Codex {
-  count: number;
-  next: string | null;
-  previous: string | null;
-  results: any[];
+  count: number
+  next: string | null
+  previous: string | null
+  results: any[]
 }
 
 /**
@@ -25,11 +25,11 @@ export interface Codex {
  */
 
 export interface CodexState {
-  readonly data: Codex;
-  readonly isLoading: boolean;
+  data: Codex
+  isLoading: boolean
 }
 
 export interface CodexAction {
-  type: string;
-  payload: CodexState;
+  type: string
+  payload: CodexState
 }

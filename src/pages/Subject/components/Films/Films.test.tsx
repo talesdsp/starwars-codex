@@ -1,7 +1,7 @@
-import React from "react";
-import renderer from "react-test-renderer";
-import { IFilms } from "../types";
-import Films from "./Films";
+import React from "react"
+import renderer from "react-test-renderer"
+import { IFilms } from "../types"
+import Films from "./Films"
 
 describe("Film.tsx", () => {
   it("render Film component with correct data", () => {
@@ -21,8 +21,8 @@ describe("Film.tsx", () => {
       title: "A New Hope",
       url: "https://swapi.dev/api/films/1/",
       vehicles: ["https://swapi.dev/api/vehicles/4/"],
-    };
-    const component = renderer.create(<Films results={[results]} />);
-    expect(component.toJSON()).toMatchSnapshot();
-  });
-});
+    }
+    const component = renderer.create(<Films results={[results]} />)
+    expect(component.toJSON()).toMatchSnapshot()
+  })
+})

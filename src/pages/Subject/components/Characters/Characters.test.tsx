@@ -1,7 +1,7 @@
-import React from "react";
-import renderer from "react-test-renderer";
-import { ICharacters } from "../types";
-import Characters from "./Characters";
+import React from "react"
+import renderer from "react-test-renderer"
+import { ICharacters } from "../types"
+import Characters from "./Characters"
 
 describe("Character.tsx", () => {
   it("render Character component with correct data", () => {
@@ -22,8 +22,8 @@ describe("Character.tsx", () => {
       starships: ["https://swapi.dev/api/starships/12/"],
       url: "https://swapi.dev/api/people/1/",
       vehicles: ["https://swapi.dev/api/vehicles/14/"],
-    };
-    const component = renderer.create(<Characters results={[results]} />);
-    expect(component.toJSON()).toMatchSnapshot();
-  });
-});
+    }
+    const component = renderer.create(<Characters results={[results]} />)
+    expect(component.toJSON()).toMatchSnapshot()
+  })
+})

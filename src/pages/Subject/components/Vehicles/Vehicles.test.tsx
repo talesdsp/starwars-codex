@@ -1,7 +1,7 @@
-import React from "react";
-import renderer from "react-test-renderer";
-import { IVehicles } from "../types";
-import Vehicles from "./Vehicles";
+import React from "react"
+import renderer from "react-test-renderer"
+import { IVehicles } from "../types"
+import Vehicles from "./Vehicles"
 
 describe("Starships.tsx", () => {
   it("render Starships component with correct data", () => {
@@ -22,8 +22,8 @@ describe("Starships.tsx", () => {
       films: ["https://swapi.dev/api/films/1/"],
       url: "https://swapi.dev/api/vehicles/4/",
       vehicle_class: "wheeled",
-    };
-    const component = renderer.create(<Vehicles results={[results]} />);
-    expect(component.toJSON()).toMatchSnapshot();
-  });
-});
+    }
+    const component = renderer.create(<Vehicles results={[results]} />)
+    expect(component.toJSON()).toMatchSnapshot()
+  })
+})

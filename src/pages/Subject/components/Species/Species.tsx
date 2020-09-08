@@ -1,7 +1,7 @@
-import React from "react";
-import { Button, Item, Modal, X } from "../styled";
-import { Specie } from "../types";
-import { closeModal } from "../utils";
+import React from "react"
+import { Button, Item, Modal, X } from "../styled"
+import { Specie } from "../types"
+import { closeModal } from "../utils"
 
 const Species: Specie = ({ results }) => {
   return (
@@ -23,7 +23,7 @@ const Species: Specie = ({ results }) => {
         </Item>
       ))}
     </>
-  );
-};
+  )
+}
 
-export default Species;
+export default Species

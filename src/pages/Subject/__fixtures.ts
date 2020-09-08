@@ -1,9 +1,9 @@
-import configureStore from "redux-mock-store";
-import { RunSagaOptions, stdChannel } from "redux-saga";
-import { ApplicationState } from "./store";
-import { Codex, CodexState } from "./store/codex/types";
+import configureStore from "redux-mock-store"
+import { RunSagaOptions, stdChannel } from "redux-saga"
+import { ApplicationState } from "./store"
+import { Codex, CodexState } from "./store/codex/types"
 
-declare let global: { fetch: jest.Mock<any, any> };
+declare let global: { fetch: jest.Mock<any, any> }
 
 export const fetchedData: Codex = {
   count: 10,
@@ -42,36 +42,38 @@ export const fetchedData: Codex = {
       url: "https://swapi.dev/api/people/10/",
     },
   ],
-};
+}
 
 export const loadingData: Codex = {
   count: 1,
   previous: null,
   next: null,
   results: [{}],
-};
+}
 
-export const mockFetchPromise = Promise.resolve({ json: () => Promise.resolve(fetchedData) });
+export const mockFetchPromise = Promise.resolve({
+  json: () => Promise.resolve(fetchedData),
+})
 
-global.fetch = jest.fn().mockImplementation(() => mockFetchPromise);
+global.fetch = jest.fn().mockImplementation(() => mockFetchPromise)
 
-export const mockGlobal = global;
+export const mockGlobal = global
 
-export const dispatchedActions: any[] = [];
+export const dispatchedActions: any[] = []
 
-export const channel = stdChannel();
+export const channel = stdChannel()
 
 export const fakeStore: RunSagaOptions<any, any> = {
   channel,
   getState: () => "initial",
   dispatch: (action) => dispatchedActions.push(action),
-};
+}
 
-const reducer = (state: CodexState) => ({ codex: state });
+const reducer = (state: CodexState) => ({ codex: state })
 
 export const mockStore = configureStore<ApplicationState>()(
-  reducer({ data: fetchedData, isLoading: false })
-);
+  reducer({ data: fetchedData, isLoading: false }),
+)
 export const mockEmpty = configureStore<ApplicationState>()(
-  reducer({ data: loadingData, isLoading: true })
-);
+  reducer({ data: loadingData, isLoading: true }),
+)

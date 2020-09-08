@@ -1,4 +1,4 @@
-import Footer from "./Footer/Footer";
-import Stars from "./Stars/Stars";
+import Footer from "./Footer/Footer"
+import Stars from "./Stars/Stars"
 
-export { Footer, Stars };
+export { Footer, Stars }

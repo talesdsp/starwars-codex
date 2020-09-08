@@ -1,0 +1,221 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> render 1`] = `
+.c2 {
+  display: none;
+}
+
+.c4 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #ccc;
+  font-size: 1.2rem;
+}
+
+.c5 {
+  border: 1px solid #333;
+  border-radius: 12%;
+  padding: 0 0.3rem;
+  margin: 0 1rem;
+  width: 3.6rem;
+}
+
+.c5 img {
+  width: 100%;
+}
+
+.c0 {
+  position: fixed;
+  top: -100vh;
+  border-radius: 50%;
+  -webkit-animation-name: hKrxre;
+  animation-name: hKrxre;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.c1 {
+  -webkit-animation: iXyqho 1s linear infinite;
+  animation: iXyqho 1s linear infinite;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 2;
+  border-top: 2px solid grey;
+  border-right: 2px solid grey;
+  border-bottom: 2px solid grey;
+  border-left: 4px solid #ffe81f;
+  background: transparent;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+@media (min-width:768px) {
+  .c2 {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    background: rgba(255,255,255,0.03);
+    display: block;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 7rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c3 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 60rem;
+    width: 40%;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+}
+
+<div>
+  <audio
+    id="theme"
+    loop=""
+  >
+    <source
+      id="ogg"
+      src="starwars.ogg"
+      type="audio/ogg"
+    />
+    <source
+      id="mp3"
+      src="starwars.mp3"
+      type="audio/mpeg"
+    />
+  </audio>
+  <audio
+    id="lightsaberSound"
+  >
+    <source
+      id="ogg"
+      src="lightsaber.ogg"
+      type="audio/ogg"
+    />
+    <source
+      id="mp3"
+      src="lightsaber.mp3"
+      type="audio/mpeg"
+    />
+  </audio>
+  <video
+    id="lightsaberVideo"
+  >
+    <source
+      src="lightning.mp4"
+      type="video/mp4; codecs=\\"avc1.42E01E, mp4a.40.2\\""
+    />
+  </video>
+  <div
+    class="c0 layer1"
+  />
+  <div
+    class="c0 layer1 a"
+  />
+  <div
+    class="c0 layer2"
+  />
+  <div
+    class="c0 layer2 a"
+  />
+  <div
+    class="c0 layer3"
+  />
+  <div
+    class="c0 layer3 a"
+  />
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+  >
+    <div
+      class="c3"
+    >
+      <div
+        class="c4"
+      >
+        <div
+          class="c5"
+        >
+          <img
+            alt="up-arrow"
+            src="[object Object]"
+          />
+        </div>
+        - Up
+      </div>
+      <div
+        class="c4"
+      >
+        <div
+          class="c5"
+        >
+          <img
+            alt="down-arrow"
+            src="[object Object]"
+          />
+        </div>
+        - Down
+      </div>
+      <div
+        class="c4"
+      >
+        <div
+          class="c5"
+        >
+          <img
+            alt="enter-key"
+            src="[object Object]"
+          />
+        </div>
+        - Confirm
+      </div>
+    </div>
+  </div>
+</div>
+`;

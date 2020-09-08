@@ -1,10 +1,15 @@
-import styled, { keyframes } from "styled-components";
-import { globalButton, globalItem, globalList, globalWindow } from "../../../global-styled/index";
+import styled, { keyframes } from "styled-components"
+import {
+  globalButton,
+  globalItem,
+  globalList,
+  globalWindow,
+} from "../../../global-styled/index"
 
-export const Window = styled(globalWindow)``;
-export const List = styled(globalList)``;
-export const Item = styled(globalItem)``;
-export const Button = styled(globalButton)``;
+export const Window = styled(globalWindow)``
+export const List = styled(globalList)``
+export const Item = styled(globalItem)``
+export const Button = styled(globalButton)``
 
 export const X = styled.div`
   width: 4rem;
@@ -40,7 +45,7 @@ export const X = styled.div`
       display: none;
     }
   }
-`;
+`
 
 const fadeIn = keyframes`
 from{
@@ -51,7 +56,7 @@ to{
   opacity: 1;
   transform: translate3d(0, 0, 0);
   };
-`;
+`
 
 export const Modal = styled.div`
   display: none;
@@ -89,4 +94,4 @@ export const Modal = styled.div`
     right: 0;
     top: 12rem;
   }
-`;
+`

@@ -1,11 +1,16 @@
-import styled from "styled-components";
-import { globalButton, globalItem, globalList, globalWindow } from "../../global-styled/index";
+import styled from "styled-components"
+import {
+  globalButton,
+  globalItem,
+  globalList,
+  globalWindow,
+} from "../../global-styled/index"
 
-export const Window = styled(globalWindow)``;
+export const Window = styled(globalWindow)``
 
-export const List = styled(globalList)``;
-export const Item = styled(globalItem)``;
-export const Button = styled(globalButton)``;
+export const List = styled(globalList)``
+export const Item = styled(globalItem)``
+export const Button = styled(globalButton)``
 
 export const HomeWrapper = styled.div`
   width: 100%;
@@ -14,11 +19,11 @@ export const HomeWrapper = styled.div`
   @media (min-width: 768px) {
     width: 40%;
   }
-`;
+`
 
 export const StarLogo = styled.img`
   width: 100%;
   @media (min-width: 768px) {
     width: 50%;
   }
-`;
+`

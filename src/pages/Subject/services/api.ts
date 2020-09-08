@@ -6,7 +6,9 @@ export const queryRGX = /\?page=\d+/g
 export async function swapi(path?: string): Promise<Codex | undefined> {
   if (!path) return
 
-  const response = await fetch(`${API_URL}/${path.match(queryRGX) ? path : path + "/"}`)
+  const response = await fetch(
+    `${API_URL}/${path.match(queryRGX) ? path : path + "/"}`,
+  )
 
   const result = await response.json()
   return result

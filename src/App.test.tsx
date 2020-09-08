@@ -1,11 +1,11 @@
-import { shallow } from "enzyme";
-import React from "react";
-import App from "./App";
-import "./setupTest";
+import { render } from "@testing-library/react"
+import React from "react"
+import App from "./App"
+import "./setupTest"
 
 describe("<App />", () => {
-  it(" render", () => {
-    const component = shallow(<App />);
-    expect(component.name()).toStrictEqual("BrowserRouter");
-  });
-});
+  it("render", () => {
+    const result = render(<App />)
+    expect(result.container).toMatchSnapshot()
+  })
+})
