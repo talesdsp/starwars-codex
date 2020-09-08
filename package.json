@@ -1,6 +1,6 @@
 {
   "name": "star-wars",
-  "version": "1.0.1",
+  "version": "1.0.10",
   "private": true,
   "dependencies": {
     "node-sass": "^4.14.1",
@@ -8,7 +8,7 @@
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.3",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.0.1",
+    "react-scripts": "3.4.0",
     "redux": "^4.0.5",
     "redux-saga": "^1.0.2",
     "styled-components": "^5.0.1",
@@ -23,8 +23,8 @@
     "test:coverage": "yarn test --coverage --watchAll=false",
     "test:coveralls": "yarn test:coverage && coveralls < coverage/lcov.info",
     "eject": "react-scripts eject",
-    "cy:open": "node_modules/.bin/cypress open",
-    "cy:run": "yarn start & wait-on http://localhost:3000 & cypress run"
+    "cy:start": "yarn start & yarn wait-on http://localhost:3000/",
+    "cy:test": "yarn cypress run --record"
   },
   "eslintConfig": {
     "extends": "react-app"
