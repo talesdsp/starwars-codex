@@ -10,9 +10,11 @@ addons:
 install:
   - yarn install --frozen-lockfile
 script:
-  - yarn run test:coveralls
+  - yarn run test:coverage
   - yarn run cy:start
   - yarn run cy:test
+after_success:
+  - yarn run test:coveralls
 branches:
   only:
     - master
