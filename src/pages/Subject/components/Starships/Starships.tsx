@@ -1,7 +1,7 @@
-import React from "react";
-import { Button, Item, Modal, X } from "../styled";
-import { Starship } from "../types";
-import { closeModal } from "../utils";
+import React from "react"
+import { Button, Item, Modal, X } from "../styled"
+import { Starship } from "../types"
+import { closeModal } from "../utils"
 
 const Starships: Starship = ({ results }) => {
   return (
@@ -23,7 +23,7 @@ const Starships: Starship = ({ results }) => {
         </Item>
       ))}
     </>
-  );
-};
+  )
+}
 
-export default Starships;
+export default Starships

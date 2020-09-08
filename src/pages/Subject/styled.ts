@@ -1,10 +1,15 @@
-import styled, { keyframes } from "styled-components";
-import { globalButton, globalItem, globalList, globalWindow } from "../../global-styled/index";
+import styled, { keyframes } from "styled-components"
+import {
+  globalButton,
+  globalItem,
+  globalList,
+  globalWindow,
+} from "../../global-styled/index"
 
-export const Window = styled(globalWindow)``;
-export const List = styled(globalList)``;
-export const Item = styled(globalItem)``;
-export const Button = styled(globalButton)``;
+export const Window = styled(globalWindow)``
+export const List = styled(globalList)``
+export const Item = styled(globalItem)``
+export const Button = styled(globalButton)``
 export const Role = styled.h1`
   font-size: 3rem;
   color: #fff;
@@ -13,7 +18,7 @@ export const Role = styled.h1`
   text-align: center;
   background-color: #03121a;
   padding: 3rem 0;
-`;
+`
 
 const rotate360 = keyframes`
   0%{
@@ -23,7 +28,7 @@ const rotate360 = keyframes`
   100%{
     transform: rotate(720deg)
   }
-`;
+`
 
 export const Spinner = styled.div`
   animation: ${rotate360} 1s linear infinite;
@@ -43,4 +48,4 @@ export const Spinner = styled.div`
   width: 24px;
   height: 24px;
   border-radius: 50%;
-`;
+`

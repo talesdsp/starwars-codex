@@ -1,7 +1,7 @@
-import React from "react";
-import renderer from "react-test-renderer";
-import { ISpecies } from "../types";
-import Species from "./Species";
+import React from "react"
+import renderer from "react-test-renderer"
+import { ISpecies } from "../types"
+import Species from "./Species"
 
 describe("Species.tsx", () => {
   it("render Species component with correct data", () => {
@@ -18,11 +18,14 @@ describe("Species.tsx", () => {
       language: "Shyriiwook",
       name: "Wookie",
       people: ["https://swapi.dev/api/people/13/"],
-      films: ["https://swapi.dev/api/films/1/", "https://swapi.dev/api/films/2/"],
+      films: [
+        "https://swapi.dev/api/films/1/",
+        "https://swapi.dev/api/films/2/",
+      ],
       skin_colors: "gray",
       url: "https://swapi.dev/api/species/3/",
-    };
-    const component = renderer.create(<Species results={[results]} />);
-    expect(component.toJSON()).toMatchSnapshot();
-  });
-});
+    }
+    const component = renderer.create(<Species results={[results]} />)
+    expect(component.toJSON()).toMatchSnapshot()
+  })
+})

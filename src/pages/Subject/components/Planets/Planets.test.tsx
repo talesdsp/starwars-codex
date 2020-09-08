@@ -1,7 +1,7 @@
-import React from "react";
-import renderer from "react-test-renderer";
-import { IPlanets } from "../types";
-import Planets from "./Planets";
+import React from "react"
+import renderer from "react-test-renderer"
+import { IPlanets } from "../types"
+import Planets from "./Planets"
 
 describe("Planets.tsx", () => {
   it("render Planets component with correct data", () => {
@@ -20,8 +20,8 @@ describe("Planets.tsx", () => {
       surface_water: "1",
       terrain: "Dessert",
       url: "https://swapi.dev/api/planets/1/",
-    };
-    const component = renderer.create(<Planets results={[results]} />);
-    expect(component.toJSON()).toMatchSnapshot();
-  });
-});
+    }
+    const component = renderer.create(<Planets results={[results]} />)
+    expect(component.toJSON()).toMatchSnapshot()
+  })
+})

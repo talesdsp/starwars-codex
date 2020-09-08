@@ -1,6 +1,6 @@
-import React from "react";
-import styled, { keyframes } from "styled-components";
-import "./stars.scss";
+import React from "react"
+import styled, { keyframes } from "styled-components"
+import "./stars.scss"
 
 const Stars: React.FC = () => (
   <>
@@ -11,23 +11,23 @@ const Stars: React.FC = () => (
     <Star className="layer3" />
     <Star className="layer3 a" />
   </>
-);
+)
 
-export default Stars;
+export default Stars
 
 const fallingSkies = keyframes`
   100% {
     transform: translateY(200vh);
   }
-`;
+`
 
 interface IStarProps {
-  layer1?: boolean;
-  layer1A?: boolean;
-  layer2?: boolean;
-  layer2A?: boolean;
-  layer3?: boolean;
-  layer3A?: boolean;
+  layer1?: boolean
+  layer1A?: boolean
+  layer2?: boolean
+  layer2A?: boolean
+  layer3?: boolean
+  layer3A?: boolean
 }
 
 const Star = styled.div<IStarProps>`
@@ -37,4 +37,4 @@ const Star = styled.div<IStarProps>`
   animation-name: ${fallingSkies};
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-`;
+`

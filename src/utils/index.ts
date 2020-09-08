@@ -1,3 +1,3 @@
-import { waitButtons } from "./navigation";
+import { waitButtons } from "./navigation"
 
-export { waitButtons };
+export { waitButtons }

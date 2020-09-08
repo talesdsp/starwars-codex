@@ -27,7 +27,7 @@ const Buttons: React.FC<ButtonProps> = ({ theme }) => {
     dispatch(triggerLoading())
     dispatch(getAsyncData(extractPathFromUrl(url)))
   }
-  
+
   return (
     <Controls>
       <Button off={previous === null} onClick={() => goto(previous, "back")}>
@@ -39,18 +39,20 @@ const Buttons: React.FC<ButtonProps> = ({ theme }) => {
       </Button>
 
       <Page>
-        {[...Array(Math.trunc(count / 10) + (count % 10 > 0 ? 1 : 0))].map((_, i) => (
-          <Button
-            paginate
-            tabIndex={0}
-            key={i}
-            onClick={(e) => {
-              goto(`https://swapi.dev/api/${theme}/?page=${i + 1}`)
-            }}
-          >
-            {i + 1}
-          </Button>
-        ))}
+        {[...Array(Math.trunc(count / 10) + (count % 10 > 0 ? 1 : 0))].map(
+          (_, i) => (
+            <Button
+              paginate
+              tabIndex={0}
+              key={i}
+              onClick={(e) => {
+                goto(`https://swapi.dev/api/${theme}/?page=${i + 1}`)
+              }}
+            >
+              {i + 1}
+            </Button>
+          ),
+        )}
       </Page>
     </Controls>
   )

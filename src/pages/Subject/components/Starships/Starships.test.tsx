@@ -1,7 +1,7 @@
-import React from "react";
-import renderer from "react-test-renderer";
-import { IStarships } from "../types";
-import Starships from "./Starships";
+import React from "react"
+import renderer from "react-test-renderer"
+import { IStarships } from "../types"
+import Starships from "./Starships"
 
 describe("Starships.tsx", () => {
   it("render Starships component with correct data", () => {
@@ -15,7 +15,8 @@ describe("Starships.tsx", () => {
       edited: "2014-12-10T16:36:50.509000Z",
       hyperdrive_rating: "4.0",
       length: "120000",
-      manufacturer: "Imperial Department of Military Research, Sienar Fleet Systems",
+      manufacturer:
+        "Imperial Department of Military Research, Sienar Fleet Systems",
       max_atmosphering_speed: "n/a",
       model: "DS-1 Orbital Battle Station",
       name: "Death Star",
@@ -24,8 +25,8 @@ describe("Starships.tsx", () => {
       pilots: [],
       starship_class: "Deep Space Mobile Battlestation",
       url: "https://swapi.dev/api/starships/9/",
-    };
-    const component = renderer.create(<Starships results={[results]} />);
-    expect(component.toJSON()).toMatchSnapshot();
-  });
-});
+    }
+    const component = renderer.create(<Starships results={[results]} />)
+    expect(component.toJSON()).toMatchSnapshot()
+  })
+})

@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from "styled-components";
+import styled, { css, keyframes } from "styled-components"
 
 const shake = keyframes`
     0% {
@@ -34,10 +34,10 @@ const shake = keyframes`
     100% {
       transform: translate(.1rem, -.2rem) rotate(-1deg);
     }
-`;
+`
 
 interface IWindowProps {
-  readonly shake?: boolean;
+  readonly shake?: boolean
 }
 
 export const globalWindow = styled.main<IWindowProps>`
@@ -53,7 +53,7 @@ export const globalWindow = styled.main<IWindowProps>`
     css`
       animation: ${shake} 1.25s;
     `}
-`;
+`
 
 export const globalList = styled.ul`
   display: flex;
@@ -66,7 +66,7 @@ export const globalList = styled.ul`
   @media (min-width: 768px) {
     width: 60%;
   }
-`;
+`
 
 export const globalItem = styled.li`
   color: #fff;
@@ -80,11 +80,11 @@ export const globalItem = styled.li`
   p {
     font-size: 1.6rem;
   }
-`;
+`
 
 interface IButtonProps {
-  readonly paginate?: boolean;
-  readonly off?: boolean;
+  readonly paginate?: boolean
+  readonly off?: boolean
 }
 
 export const globalButton = styled.button<IButtonProps>`
@@ -138,4 +138,4 @@ export const globalButton = styled.button<IButtonProps>`
     css`
       background-color: #111;
     `}
-`;
+`

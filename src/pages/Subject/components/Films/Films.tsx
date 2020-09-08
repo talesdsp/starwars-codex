@@ -1,7 +1,7 @@
-import React from "react";
-import { Button, Item, Modal, X } from "../styled";
-import { Film } from "../types";
-import { closeModal } from "../utils";
+import React from "react"
+import { Button, Item, Modal, X } from "../styled"
+import { Film } from "../types"
+import { closeModal } from "../utils"
 
 const Films: Film = ({ results }) => {
   return (
@@ -22,7 +22,7 @@ const Films: Film = ({ results }) => {
         </Item>
       ))}
     </>
-  );
-};
+  )
+}
 
-export default Films;
+export default Films

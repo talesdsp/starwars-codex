@@ -1,7 +1,7 @@
-import React from "react";
-import { Button, Item, Modal, X } from "../styled";
-import { Planet } from "../types";
-import { closeModal } from "../utils";
+import React from "react"
+import { Button, Item, Modal, X } from "../styled"
+import { Planet } from "../types"
+import { closeModal } from "../utils"
 
 const Planets: Planet = ({ results }) => {
   return (
@@ -23,6 +23,6 @@ const Planets: Planet = ({ results }) => {
         </Item>
       ))}
     </>
-  );
-};
-export default Planets;
+  )
+}
+export default Planets

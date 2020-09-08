@@ -1,7 +1,7 @@
-import React from "react";
-import { Button, Item, Modal, X } from "../styled";
-import { Character } from "../types";
-import { closeModal } from "../utils";
+import React from "react"
+import { Button, Item, Modal, X } from "../styled"
+import { Character } from "../types"
+import { closeModal } from "../utils"
 
 const Characters: Character = ({ results }) => {
   return (
@@ -21,7 +21,7 @@ const Characters: Character = ({ results }) => {
         </Item>
       ))}
     </>
-  );
-};
+  )
+}
 
-export default Characters;
+export default Characters

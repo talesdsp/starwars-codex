@@ -1,17 +1,17 @@
-import React, { useEffect } from "react";
-import { RouteComponentProps } from "react-router-dom";
-import { waitButtons } from "../../utils/navigation";
-import { URL } from "../types";
-import { Button, Item, List, Window } from "./styled";
+import React, { useEffect } from "react"
+import { RouteComponentProps } from "react-router-dom"
+import { waitButtons } from "~/utils"
+import { URL } from "../types"
+import { Button, Item, List, Window } from "./styled"
 
 const Categories: React.FC<RouteComponentProps> = ({ history }) => {
   useEffect(() => {
-    waitButtons();
-  }, []);
+    waitButtons()
+  }, [])
 
   const goto = (url: URL) => {
-    history.push(`/categories/${url}`);
-  };
+    history.push(`/categories/${url}`)
+  }
 
   return (
     <Window>
@@ -35,12 +35,12 @@ const Categories: React.FC<RouteComponentProps> = ({ history }) => {
           <Button onClick={() => goto("species")}>Species</Button>
         </Item>
         <Item>
-          <Button off onClick={() => history.goBack()}>
+          <Button off onClick={() => history.push("/")}>
             Go Back
           </Button>
         </Item>
       </List>
     </Window>
-  );
-};
-export default Categories;
+  )
+}
+export default Categories

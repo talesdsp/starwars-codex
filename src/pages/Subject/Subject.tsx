@@ -1,9 +1,17 @@
 import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { RouteComponentProps } from "react-router-dom"
-import { waitButtons } from "../../utils"
+import { waitButtons } from "~/utils"
 import { SelectComponent, SParams } from "../types"
-import { Buttons, Characters, Films, Planets, Species, Starships, Vehicles } from "./components"
+import {
+  Buttons,
+  Characters,
+  Films,
+  Planets,
+  Species,
+  Starships,
+  Vehicles,
+} from "./components"
 import { ApplicationState } from "./store"
 import { getAsyncData, triggerLoading } from "./store/codex/actions"
 import { List, Role, Spinner } from "./styled"
@@ -35,7 +43,6 @@ const Subject: React.FC<RouteComponentProps<SParams>> = ({ match }) => {
       starships: <Starships results={results} />,
       species: <Species results={results} />,
       films: <Films results={results} />,
-
     }
 
     return selectedComponent[theme]
@@ -54,4 +61,3 @@ const Subject: React.FC<RouteComponentProps<SParams>> = ({ match }) => {
   )
 }
 export default Subject
-

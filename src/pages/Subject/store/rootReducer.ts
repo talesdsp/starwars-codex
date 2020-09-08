@@ -1,12 +1,6 @@
-import { combineReducers } from "redux";
-import { codexReducer } from "./codex";
-
-const logger = (state = "", action: any) => {
-  console.log(action);
-  return state;
-};
+import { combineReducers } from "redux"
+import { codexReducer } from "./codex"
 
 export default combineReducers({
   codex: codexReducer,
-  logger,
-});
+})
