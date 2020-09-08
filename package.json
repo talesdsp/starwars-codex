@@ -21,6 +21,7 @@
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --silent",
     "test:coverage": "yarn test --coverage --watchAll=false",
+
     "test:coveralls": "yarn coveralls < coverage/lcov.info",
     "eject": "react-scripts eject",
     "cy:start": "yarn start & yarn wait-on http://localhost:3000/",
