@@ -9,31 +9,11 @@ const Categories: React.FC<RouteComponentProps> = ({ history }) => {
     waitButtons()
   }, [])
 
-  const goto = (url: URL) => {
-    history.push(`/categories/${url}`)
-  }
-
   return (
     <Window>
       <List>
-        <Item>
-          <Button onClick={() => goto("people")}>Characters</Button>
-        </Item>
-        <Item>
-          <Button onClick={() => goto("planets")}>Planets</Button>
-        </Item>
-        <Item>
-          <Button onClick={() => goto("starships")}>Starships</Button>
-        </Item>
-        <Item>
-          <Button onClick={() => goto("vehicles")}>Vehicles</Button>
-        </Item>
-        <Item>
-          <Button onClick={() => goto("films")}>Films</Button>
-        </Item>
-        <Item>
-          <Button onClick={() => goto("species")}>Species</Button>
-        </Item>
+        <ButtonsList history={history} />
+
         <Item>
           <Button off onClick={() => history.push("/")}>
             Go Back
@@ -44,3 +24,26 @@ const Categories: React.FC<RouteComponentProps> = ({ history }) => {
   )
 }
 export default Categories
+
+function ButtonsList({ history }) {
+  const goto = (url: URL) => {
+    return () => history.push(`/categories/${url}`)
+  }
+
+  const subjects: URL[] = [
+    "people",
+    "planets",
+    "starships",
+    "vehicles",
+    "films",
+    "species",
+  ]
+
+  const render = subjects.map((sub) => (
+    <Item key={sub}>
+      <Button onClick={goto(sub)}>{sub}</Button>
+    </Item>
+  ))
+
+  return <>{render}</>
+}
