@@ -7,7 +7,7 @@ global.fetch = jest
     Promise.resolve({ json: () => Promise.resolve(p) }),
   )
 
-describe("estractPathFromUrl", () => {
+describe("extractPathFromUrl", () => {
   it("return no params from the url", () => {
     expect(extractPathFromUrl(API_URL)).toEqual(API_URL)
   })
