@@ -149,9 +149,11 @@ exports[`<App /> render 1`] = `
     id="lightsaberMove"
   >
     <source
+      src="lightsaber-move.ogg"
       type="audio/ogg"
     />
     <source
+      src="lightsaber-move.mp3"
       type="audio/mpeg"
     />
   </audio>
