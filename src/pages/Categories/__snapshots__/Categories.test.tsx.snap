@@ -14,7 +14,7 @@ exports[`Categories.tsx render component correctly 1`] = `
         <button
           class="sc-AxhCb sc-Axmtr gFtPZS"
         >
-          Characters
+          people
         </button>
       </li>
       <li
@@ -23,7 +23,7 @@ exports[`Categories.tsx render component correctly 1`] = `
         <button
           class="sc-AxhCb sc-Axmtr gFtPZS"
         >
-          Planets
+          planets
         </button>
       </li>
       <li
@@ -32,7 +32,7 @@ exports[`Categories.tsx render component correctly 1`] = `
         <button
           class="sc-AxhCb sc-Axmtr gFtPZS"
         >
-          Starships
+          starships
         </button>
       </li>
       <li
@@ -41,7 +41,7 @@ exports[`Categories.tsx render component correctly 1`] = `
         <button
           class="sc-AxhCb sc-Axmtr gFtPZS"
         >
-          Vehicles
+          vehicles
         </button>
       </li>
       <li
@@ -50,7 +50,7 @@ exports[`Categories.tsx render component correctly 1`] = `
         <button
           class="sc-AxhCb sc-Axmtr gFtPZS"
         >
-          Films
+          films
         </button>
       </li>
       <li
@@ -59,7 +59,7 @@ exports[`Categories.tsx render component correctly 1`] = `
         <button
           class="sc-AxhCb sc-Axmtr gFtPZS"
         >
-          Species
+          species
         </button>
       </li>
       <li
